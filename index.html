@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Đức hay Tài — HCM-T21</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ============ SCREEN 0 — Trang mở đầu ============ -->
+<section id="screen-0" class="screen">
+  <div class="card">
+    <h1 id="site-title">[TÊN ĐỀ TÀI — nhóm điền]</h1>
+
+    <div class="vote-box">
+      <p class="vote-question">Theo bạn, <strong>đức</strong> hay <strong>tài</strong> quan trọng hơn?</p>
+      <div class="vote-buttons">
+        <button type="button" class="vote-btn duc" data-vote="duc">Đức</button>
+        <button type="button" class="vote-btn tai" data-vote="tai">Tài</button>
+      </div>
+    </div>
+
+    <p class="intro-text">[2–3 câu mô tả cách chơi — nhóm điền: bạn sẽ trải qua 6 tình huống, mỗi lựa chọn ảnh hưởng đến điểm Đức và Tài của bạn...]</p>
+
+    <button type="button" id="btn-start" class="btn-primary" disabled>Bắt đầu</button>
+  </div>
+</section>
+
+<!-- ============ SCREEN 1 — Trang chơi (lặp 6 lần) ============ -->
+<section id="screen-1" class="screen hidden">
+  <div class="card">
+    <div class="progress-bar">
+      <span id="progress-label">Tình huống 1/6</span>
+      <div class="progress-track"><div id="progress-fill" class="progress-fill"></div></div>
+    </div>
+
+    <div id="stimulus-block" class="block">
+      <h2 class="block-label">Tình huống</h2>
+      <p id="stimulus-text">[Đoạn mô tả tình huống — placeholder]</p>
+    </div>
+
+    <div id="choices-block" class="block">
+      <h2 class="block-label">Bạn chọn gì?</h2>
+      <div id="choices-list" class="choices-list"><!-- 3 nút lựa chọn được sinh bằng JS --></div>
+    </div>
+
+    <div id="feedback-block" class="block hidden">
+      <h2 class="block-label">Hậu quả</h2>
+      <p id="feedback-text">[Đoạn hậu quả — placeholder]</p>
+      <div class="delta-row">
+        <span id="delta-duc" class="delta-tag duc">Đức: +0</span>
+        <span id="delta-tai" class="delta-tag tai">Tài: +0</span>
+      </div>
+      <p id="feedback-source" class="source-cite">[Trích giáo trình + số trang]</p>
+    </div>
+
+    <div id="insight-block" class="block hidden">
+      <h2 class="block-label">Bài học rút ra</h2>
+      <p id="insight-text">[Câu chốt ngắn liên hệ nguyên tắc]</p>
+      <button type="button" id="btn-next-scenario" class="btn-primary">Tình huống tiếp theo</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SCREEN 2 — Trang kết quả cá nhân ============ -->
+<section id="screen-2" class="screen hidden">
+  <div class="card">
+    <h2>Kết quả của bạn</h2>
+
+    <div class="chart-wrap">
+      <svg id="result-chart" viewBox="0 0 300 300" role="img" aria-label="Biểu đồ 2 trục Đức - Tài">
+        <rect x="0"   y="0"   width="150" height="150" class="quad-bg quad-top-left" />
+        <rect x="150" y="0"   width="150" height="150" class="quad-bg quad-top-right" />
+        <rect x="0"   y="150" width="150" height="150" class="quad-bg quad-bottom-left" />
+        <rect x="150" y="150" width="150" height="150" class="quad-bg quad-bottom-right" />
+        <line x1="150" y1="0" x2="150" y2="300" class="axis-line" />
+        <line x1="0" y1="150" x2="300" y2="150" class="axis-line" />
+        <text x="150" y="14" text-anchor="middle" class="axis-label">Đức ▲</text>
+        <text x="290" y="145" text-anchor="end" class="axis-label">Tài ▶</text>
+        <circle id="result-dot" cx="150" cy="150" r="7" class="result-dot" />
+      </svg>
+    </div>
+
+    <h3 id="quadrant-name">[Tên góc kết quả]</h3>
+    <p id="quadrant-desc">[2–3 câu giải thích ý nghĩa góc này — placeholder]</p>
+    <p id="vote-compare" class="vote-compare"></p>
+
+    <div class="result-actions">
+      <button type="button" id="btn-view-reference" class="btn-secondary">Xem cơ sở lý luận</button>
+      <button type="button" id="btn-replay" class="btn-secondary">Chơi lại</button>
+    </div>
+
+    <a href="#" id="link-class-stats" class="footer-link">Thống kê lớp →</a>
+  </div>
+</section>
+
+<!-- ============ SCREEN 3 — Trang cơ sở lý luận ============ -->
+<section id="screen-3" class="screen hidden">
+  <div class="card">
+    <h2>Cơ sở lý luận</h2>
+
+    <div class="block">
+      <h3 class="block-label">Khung lý thuyết gốc</h3>
+      <p id="theory-summary">[Tóm tắt tr.135–138: đức là gốc, tài là phương tiện — phụ trách: A]</p>
+    </div>
+
+    <div class="block">
+      <h3 class="block-label">3 nguyên tắc rèn đức</h3>
+      <p id="theory-principles">[Tóm tắt tr.144–148 — phụ trách: A]</p>
+    </div>
+
+    <div class="block">
+      <h3 class="block-label">6 tình huống &amp; trích dẫn</h3>
+      <ul id="scenario-citations" class="citation-list"><!-- sinh tự động từ SCENARIOS --></ul>
+    </div>
+
+    <div class="block">
+      <h3 class="block-label">AI Declaration</h3>
+      <p id="ai-declaration">[Công cụ dùng, phần giữ, phần sửa/bỏ — nhóm điền]</p>
+    </div>
+
+    <div class="block">
+      <h3 class="block-label">Nguồn kiểm chứng khác</h3>
+      <ul id="external-sources" class="citation-list"><!-- nhóm điền --></ul>
+    </div>
+
+    <button type="button" id="btn-back-from-reference" class="btn-secondary">Quay lại</button>
+  </div>
+</section>
+
+<!-- ============ SCREEN 4 — Trang thống kê lớp ============ -->
+<section id="screen-4" class="screen hidden">
+  <div class="card">
+    <h2>Thống kê lớp</h2>
+    <p class="stats-note">Chỉ bật lúc thuyết trình — số liệu cập nhật tay từ Google Form (xem <code>CLASS_STATS</code> trong script.js).</p>
+
+    <div class="stats-grid">
+      <div class="stat-item">
+        <span class="stat-value" id="stat-total-plays">0</span>
+        <span class="stat-caption">lượt chơi hoàn thành</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value" id="stat-vote-duc">0%</span>
+        <span class="stat-caption">chọn "Đức" ban đầu</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value" id="stat-vote-tai">0%</span>
+        <span class="stat-caption">chọn "Tài" ban đầu</span>
+      </div>
+    </div>
+
+    <h3 class="block-label">Tỉ lệ rơi vào từng góc</h3>
+    <ul id="stats-quadrants" class="stats-quadrant-list"><!-- sinh tự động --></ul>
+
+    <button type="button" id="btn-back-from-stats" class="btn-secondary">Quay lại</button>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
