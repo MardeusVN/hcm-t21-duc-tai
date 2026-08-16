@@ -11,6 +11,7 @@
   --radius: 12px;
   --shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
   --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Source Serif 4", Georgia, "Times New Roman", serif;
 }
 
 * { box-sizing: border-box; }
@@ -28,33 +29,64 @@ body {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  padding: 24px 16px 60px;
+  padding: 24px 16px 84px;
 }
 
-.screen.hidden { display: none; }
+.hidden { display: none; }
+
+@keyframes screen-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.screen:not(.hidden) { animation: screen-in .4s ease both; }
+@media (prefers-reduced-motion: reduce) {
+  .screen:not(.hidden) { animation: none; }
+}
 
 .card {
+  position: relative;
+  overflow: hidden;
   width: 100%;
   max-width: 620px;
   background: var(--color-card);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  padding: 28px 24px;
+  padding: 32px 24px 28px;
   margin-top: 24px;
 }
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-duc), var(--color-tai));
+}
 
-h1 { font-size: 1.5rem; margin: 0 0 20px; }
-h2 { font-size: 1.25rem; margin: 0 0 16px; }
-h3 { font-size: 1.05rem; margin: 4px 0 10px; }
+h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.01em; }
+h1 { font-size: 1.55rem; font-weight: 700; margin: 0 0 20px; line-height: 1.25; }
+h2 { font-size: 1.3rem; font-weight: 700; margin: 0 0 16px; }
+h3 { font-size: 1.1rem; font-weight: 600; margin: 4px 0 10px; }
 
 .block { margin-bottom: 22px; }
 .block-label {
+  position: relative;
+  padding-left: 15px;
   font-size: 0.8rem;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   color: var(--color-text-muted);
   margin: 0 0 8px;
+}
+.block-label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 9px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-duc), var(--color-tai));
 }
 
 /* ---------- Screen 0 ---------- */
@@ -76,7 +108,7 @@ h3 { font-size: 1.05rem; margin: 4px 0 10px; }
 .vote-btn.duc:hover, .vote-btn.duc.selected { border-color: var(--color-duc); background: var(--color-duc-bg); }
 .vote-btn.tai:hover, .vote-btn.tai.selected { border-color: var(--color-tai); background: var(--color-tai-bg); }
 
-.intro-text { color: var(--color-text-muted); margin: 16px 0 24px; }
+.intro-text { color: var(--color-text-muted); margin: 16px 0 24px; line-height: 1.65; }
 
 /* ---------- Buttons ---------- */
 .btn-primary, .btn-secondary {
@@ -126,10 +158,26 @@ h3 { font-size: 1.05rem; margin: 4px 0 10px; }
   background: var(--color-card);
   cursor: pointer;
   font-size: 0.95rem;
+  line-height: 1.45;
+  transition: border-color .15s, transform .15s, box-shadow .15s, opacity .15s;
 }
-.choice-btn:hover:not(:disabled) { border-color: var(--color-tai); }
-.choice-btn:disabled { cursor: not-allowed; opacity: 0.55; }
-.choice-btn.chosen { border-color: var(--color-duc); background: var(--color-duc-bg); opacity: 1; }
+.choice-btn:hover:not(:disabled) {
+  border-color: var(--color-tai);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+}
+.choice-btn:disabled { cursor: not-allowed; opacity: 0.5; }
+.choice-btn.chosen { border-color: var(--color-duc); background: var(--color-duc-bg); opacity: 1; transform: none; }
+
+@keyframes reveal-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+#feedback-block:not(.hidden) { animation: reveal-in .4s ease both; }
+#insight-block:not(.hidden) { animation: reveal-in .4s ease .12s both; }
+@media (prefers-reduced-motion: reduce) {
+  #feedback-block:not(.hidden), #insight-block:not(.hidden) { animation: none; }
+}
 
 .delta-row { display: flex; gap: 10px; margin: 10px 0; }
 .delta-tag {
@@ -147,7 +195,8 @@ h3 { font-size: 1.05rem; margin: 4px 0 10px; }
 .chart-wrap { display: flex; justify-content: center; margin-bottom: 18px; }
 #result-chart { width: 100%; max-width: 300px; height: auto; }
 
-.quad-bg { opacity: 0.55; }
+.quad-bg { opacity: 0.4; transition: opacity .3s; }
+.quad-bg.quad-active { opacity: 1; }
 .quad-top-left    { fill: var(--color-duc-bg); }
 .quad-top-right   { fill: #fdeecb; }
 .quad-bottom-left { fill: #f0eee9; }
@@ -155,7 +204,21 @@ h3 { font-size: 1.05rem; margin: 4px 0 10px; }
 
 .axis-line { stroke: #c9c5bc; stroke-width: 1.5; }
 .axis-label { font-size: 11px; fill: var(--color-text-muted); font-family: var(--font); }
-.result-dot { fill: var(--color-text); stroke: #fff; stroke-width: 2; }
+.result-dot {
+  fill: var(--color-text);
+  stroke: #fff;
+  stroke-width: 2;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: dot-pop .5s cubic-bezier(.34,1.56,.64,1) .25s both;
+}
+@keyframes dot-pop {
+  from { transform: scale(0); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .result-dot { animation: none; }
+}
 
 .vote-compare {
   background: #f5f3ef;
@@ -207,8 +270,46 @@ h3 { font-size: 1.05rem; margin: 4px 0 10px; }
   font-size: 0.9rem;
 }
 
+/* ---------- Scope note (ranh giới sản phẩm) ---------- */
+.scope-note {
+  background: #f5f3ef;
+  border-radius: var(--radius);
+  padding: 10px 14px;
+  margin: 10px 0 0;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+/* ---------- Footer — cố định, luôn hiển thị, không phải popup ---------- */
+#site-footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px 12px;
+  padding: 10px 16px;
+  background: var(--color-card);
+  border-top: 1px solid var(--color-border);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+#site-footer a {
+  color: var(--color-text);
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+#site-footer a:hover { text-decoration: underline; }
+
 @media (max-width: 420px) {
   .card { padding: 20px 16px; }
   .stats-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
   .stat-value { font-size: 1.1rem; }
+  #site-footer { font-size: 0.7rem; padding: 8px 12px; }
 }

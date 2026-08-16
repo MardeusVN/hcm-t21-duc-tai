@@ -4,6 +4,9 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Đức hay Tài — HCM-T21</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -70,10 +73,10 @@
 
     <div class="chart-wrap">
       <svg id="result-chart" viewBox="0 0 300 300" role="img" aria-label="Biểu đồ 2 trục Đức - Tài">
-        <rect x="0"   y="0"   width="150" height="150" class="quad-bg quad-top-left" />
-        <rect x="150" y="0"   width="150" height="150" class="quad-bg quad-top-right" />
-        <rect x="0"   y="150" width="150" height="150" class="quad-bg quad-bottom-left" />
-        <rect x="150" y="150" width="150" height="150" class="quad-bg quad-bottom-right" />
+        <rect x="0"   y="0"   width="150" height="150" class="quad-bg quad-top-left" data-quad="dang_tin_bat_luc" />
+        <rect x="150" y="0"   width="150" height="150" class="quad-bg quad-top-right" data-quad="vua_hong_vua_chuyen" />
+        <rect x="0"   y="150" width="150" height="150" class="quad-bg quad-bottom-left" data-quad="vo_hai_vo_dung" />
+        <rect x="150" y="150" width="150" height="150" class="quad-bg quad-bottom-right" data-quad="nguy_hiem_nhat" />
         <line x1="150" y1="0" x2="150" y2="300" class="axis-line" />
         <line x1="0" y1="150" x2="300" y2="150" class="axis-line" />
         <text x="150" y="14" text-anchor="middle" class="axis-label">Đức ▲</text>
@@ -85,6 +88,7 @@
     <h3 id="quadrant-name">[Tên góc kết quả]</h3>
     <p id="quadrant-desc">[2–3 câu giải thích ý nghĩa góc này — placeholder]</p>
     <p id="vote-compare" class="vote-compare"></p>
+    <p id="scope-note-result" class="scope-note"></p>
 
     <div class="result-actions">
       <button type="button" id="btn-view-reference" class="btn-secondary">Xem cơ sở lý luận</button>
@@ -118,6 +122,11 @@
     <div class="block">
       <h3 class="block-label">AI Declaration</h3>
       <p id="ai-declaration">[Công cụ dùng, phần giữ, phần sửa/bỏ — nhóm điền]</p>
+    </div>
+
+    <div class="block">
+      <h3 class="block-label">Ghi chú ranh giới sản phẩm</h3>
+      <p id="scope-note-theory">[Tình huống là mô phỏng, không phải sự kiện có thật — nhóm điền]</p>
     </div>
 
     <div class="block">
@@ -156,6 +165,12 @@
     <button type="button" id="btn-back-from-stats" class="btn-secondary">Quay lại</button>
   </div>
 </section>
+
+<!-- ============ FOOTER — luôn hiển thị, mọi màn hình (không popup) ============ -->
+<footer id="site-footer">
+  <span>🤖 Nhóm có dùng AI hỗ trợ soạn thảo — không dùng để gán điểm hay quyết định luận điểm.</span>
+  <a href="#" id="footer-ai-link">Xem khai báo đầy đủ →</a>
+</footer>
 
 <script src="script.js"></script>
 </body>
