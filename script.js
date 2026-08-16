@@ -615,12 +615,15 @@ const THEORY_PRINCIPLES =
   "phát triển và củng cố”.";
 
 const AI_DECLARATION =
-  "Nhóm có sử dụng công cụ trí tuệ nhân tạo trong quá trình xây dựng sản phẩm này. Công cụ " +
-  "được dùng để: tóm tắt và hệ thống hóa nội dung giáo trình, soạn bản nháp cho các tình " +
-  "huống, gợi ý cấu trúc trình bày, và tìm kiếm trường hợp thực tế để đối chiếu. Công cụ " +
-  "không được dùng để quyết định luận điểm của nhóm, gán điểm số cho các lựa chọn, hoặc thay " +
-  "thế việc đọc giáo trình gốc. Toàn bộ trích dẫn giáo trình đã được từng thành viên đối chiếu " +
-  "trực tiếp với bản gốc.";
+  "Nhóm có sử dụng công cụ trí tuệ nhân tạo (Claude, Anthropic) xuyên suốt quá trình xây " +
+  "dựng sản phẩm này, với vai trò lớn hơn một công cụ hỗ trợ đơn thuần: tóm tắt và hệ thống " +
+  "hóa nội dung giáo trình, soạn nội dung 6 tình huống, viết script thuyết trình chi tiết " +
+  "cho cả năm người, soạn 10 câu hỏi ôn tập, tìm trường hợp thực tế để đối chiếu, và viết " +
+  "toàn bộ mã nguồn website (HTML, CSS, JavaScript). Điểm số Đức và Tài của bốn trong sáu " +
+  "tình huống do AI quy đổi từ thang điểm gốc của nhóm sang thang thống nhất; phần này chưa " +
+  "được toàn bộ nhóm xác nhận chính thức. Công cụ không được dùng để tự đặt ra luận điểm " +
+  "học thuật ngoài phạm vi giáo trình, và không bịa trích dẫn hay số trang. Toàn bộ trích " +
+  "dẫn giáo trình đã được đối chiếu trực tiếp với bản gốc trước khi đưa lên web.";
 
 // Phần B (bảng phân định nội dung web) yêu cầu ghi chú ranh giới hiện ở CẢ trang kết quả
 // lẫn trang cơ sở lý luận, tách riêng khỏi AI_DECLARATION để dùng ở cả hai nơi.
