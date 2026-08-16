@@ -45,11 +45,15 @@ const OPENING_THEORY = {
       title: "Đức",
       source: "trang 134–137",
       script:
-        "Giáo trình ví con người như cây, như sông: “không có đạo đức thì dù tài giỏi " +
-        "mấy cũng không lãnh đạo được nhân dân” (trang 134–135). Đức là phẩm chất, là " +
-        "mục đích đúng đắn của hành động: “đạo đức là tiêu chuẩn cho mục đích hành động” " +
-        "(trang 136). Trang 137: “Đức là gốc, là trước hết”, nghĩa là nền tảng, không " +
-        "phải để thay thế Tài.",
+        "Giáo trình dẫn “Sửa đổi lối làm việc” (1947): “Cũng như sông thì có nguồn mới " +
+        "có nước, không có nguồn thì sông cạn. Cây phải có gốc, không có gốc thì cây " +
+        "héo. Người cách mạng phải có đạo đức, không có đạo đức thì dù tài giỏi mấy " +
+        "cũng không lãnh đạo được nhân dân” (trang 134–135). Đức là mục đích đúng đắn " +
+        "của hành động: “đạo đức là tiêu chuẩn cho mục đích hành động” (trang 136). " +
+        "Trang 137: “Đức là gốc, là trước hết”, nghĩa là nền tảng, không phải để thay " +
+        "thế Tài, phần mình nói ngay sau đây. Đây chính là lý do mọi lựa chọn của các " +
+        "bạn hôm nay sẽ luôn được nhìn qua một câu hỏi: mục đích thật sự của hành động " +
+        "này là gì?",
     },
   ],
   tai: [
@@ -57,33 +61,40 @@ const OPENING_THEORY = {
       title: "Tài",
       source: "trang 136–137",
       script:
-        "Tài trả lời câu hỏi: mình có làm được việc đó tốt hay không? Trang 136: “tài là " +
-        "phương tiện thực hiện mục đích đó; thiếu tài thì làm việc gì cũng khó, thiếu đạo " +
-        "đức thì vô dụng, thậm chí có hại.” Trang 137 nói thẳng: Tài “cực kỳ quan trọng, " +
-        "không có tài thì không xây dựng, phát triển được đất nước.” Vì vậy trò chơi chấm " +
-        "hai trục Đức và Tài độc lập, không gộp chung.",
+        "Trang 136: “Nếu đạo đức là tiêu chuẩn cho mục đích hành động thì tài là phương " +
+        "tiện thực hiện mục đích đó. Vì vậy, con người cần có cả đức và tài, nếu thiếu " +
+        "tài thì làm việc gì cũng khó, nhưng thiếu đạo đức thì vô dụng, thậm chí có " +
+        "hại.” Người còn dặn: “Dạy cũng như học phải biết chú trọng cả tài lẫn đức... " +
+        "Nếu không có đạo đức cách mạng thì có tài cũng vô dụng” (trang 136). Vì vậy " +
+        "trò chơi chấm hai trục Đức và Tài độc lập, không gộp chung. Một lựa chọn có " +
+        "thể đúng nhưng chưa đủ hiệu quả, hoặc hiệu quả nhưng sai mục đích, sáu tình " +
+        "huống sau đây sẽ cho thấy rõ sự khác biệt đó.",
     },
   ],
-  // E, kết luận, trang 153-157: gắn vào nút "Kết luận" ở Screen 2 (trang kết quả).
+  // E, kết luận, trang 157-158: gắn vào nút "Kết luận" ở Screen 2 (trang kết quả).
   ket_luan: [
     {
       title: "Thực trạng đạo đức hiện nay",
-      source: "trang 153",
+      source: "trang 157–158",
       script:
-        "Trang 153: đạo đức xã hội hiện nay có cả hai mặt. Tích cực: phần lớn sinh viên " +
-        "vẫn nhân hậu, trong sạch, cần cù, sáng tạo, có chí lập thân lập nghiệp. Tiêu cực: " +
-        "một bộ phận suy thoái tư tưởng chính trị, đạo đức, xuất hiện chủ nghĩa cá nhân, " +
-        "bệnh cơ hội, quan liêu, tham nhũng. Nhìn lại kết quả cả lớp vừa chọn, các bạn " +
-        "đang ở nhóm nào?",
+        "Trang 157-158: phần lớn sinh viên, thanh niên trí thức vẫn giữ được lối sống " +
+        "nhân hậu, tình nghĩa, trong sạch, khiêm tốn, cần cù, sáng tạo, có chí lập " +
+        "thân lập nghiệp, dám đối mặt khó khăn, dám chịu trách nhiệm. Nhưng giáo trình " +
+        "cũng thẳng thắn: “tình trạng suy thoái về tư tưởng chính trị, đạo đức, lối " +
+        "sống, bệnh cơ hội, chủ nghĩa cá nhân và tệ quan liêu, tham nhũng, lãng phí " +
+        "trong một bộ phận cán bộ, công chức diễn ra nghiêm trọng.” Nhìn lại kết quả " +
+        "cả lớp vừa chọn, các bạn đang ở nhóm nào?",
     },
     {
       title: "Liên hệ sinh viên: Học để làm gì? Học để phục vụ ai?",
-      source: "trang 153–157",
+      source: "trang 157",
       script:
-        "Một bộ phận sinh viên phai nhạt lý tưởng, chạy theo lối sống thực dụng, thiếu " +
-        "trách nhiệm. Câu hỏi khép lại hôm nay: “Học để làm gì? Học để phục vụ ai?” Đức " +
-        "là gốc định hướng hành động, Tài là năng lực biến mục tiêu thành kết quả thật. " +
-        "Sinh viên tốt không chỉ giỏi, mà còn trung thực và có trách nhiệm.",
+        "Trang 157: một bộ phận sinh viên “phai nhạt niềm tin, lý tưởng, mất phương " +
+        "hướng phấn đấu, không có chí lập thân, lập nghiệp, chạy theo lối sống thực " +
+        "dụng, thiếu trách nhiệm.” Hồ Chí Minh đặt câu hỏi cho thanh niên trí thức: " +
+        "“Học để làm gì? Học để phục vụ ai? Đó là hai câu hỏi cần phải trả lời dứt " +
+        "khoát thì mới có phương hướng để sửa chữa khuyết điểm của mình.” Đức là gốc " +
+        "định hướng hành động, Tài là năng lực biến mục tiêu thành kết quả thật.",
     },
   ],
 };
@@ -95,19 +106,26 @@ const LAYER_THEORY = {
       title: "Xây đi đôi với chống, lấy xây làm chính",
       source: "trang 146",
       script:
-        "Trang 146: “xây phải đi đôi với chống, muốn xây phải chống, chống nhằm mục đích " +
-        "xây, lấy xây làm chính.” Ở tình huống 2, im lặng bao che là “xây” không “chống”; " +
-        "tố cáo gay gắt là “chống” không “xây”; trao đổi thẳng thắn rồi báo minh bạch mới " +
-        "đúng là xây đi đôi với chống, nên được điểm cao nhất.",
+        "Trang 146: “không có ai cái gì cũng tốt, cái gì cũng hay”, nên ranh giới đúng " +
+        "sai trong đạo đức không đơn giản. “Xây phải đi đôi với chống, muốn xây phải " +
+        "chống, chống nhằm mục đích xây, lấy xây làm chính.” Ở tình huống 2, im lặng " +
+        "bao che là “xây” không “chống”; tố cáo gay gắt là “chống” không “xây”; trao " +
+        "đổi thẳng thắn rồi báo minh bạch mới đúng là xây đi đôi với chống, nên được " +
+        "điểm cao nhất. Nguồn gốc của mọi tệ nạn, theo giáo trình, là chủ nghĩa cá " +
+        "nhân, nhưng đấu tranh chống nó không phải là “giày xéo lên lợi ích cá nhân”, " +
+        "mà là chống thói ích kỷ, hại tập thể.",
     },
     {
       title: "Thanh niên phải có đức, có tài",
       source: "trang 157",
       script:
-        "Hồ Chí Minh mong muốn: “Thanh niên phải có đức, có tài” (trang 157). Ở tình " +
-        "huống 1, copy đồ án để đúng hạn là “tài” giả vì đến từ gian dối. Xin gia hạn và " +
-        "tự làm dù nộp trễ mới là có đức thật (trung thực) và có tài thật (năng lực của " +
-        "chính mình), nên được điểm cao nhất cả hai trục.",
+        "Trang 157: Hồ Chí Minh mong muốn “Thanh niên phải có đức, có tài”, vì “thanh " +
+        "niên là người chủ tương lai của nước nhà”. Ở tình huống 1, copy đồ án để đúng " +
+        "hạn là “tài” giả vì đến từ gian dối, không phải năng lực thật. Xin gia hạn và " +
+        "tự làm dù nộp trễ mới là có đức thật (trung thực, dám nhận thiếu sót) và có " +
+        "tài thật (năng lực của chính mình), nên được điểm cao nhất cả hai trục. Giáo " +
+        "trình nhấn mạnh: “nước nhà thịnh hay suy, yếu hay mạnh một phần lớn là do các " +
+        "thanh niên”.",
     },
   ],
   nghe_nghiep: [
@@ -117,42 +135,52 @@ const LAYER_THEORY = {
       source: "trang 136",
       script:
         "Trang 136: “đạo đức là tiêu chuẩn cho mục đích hành động, tài là phương tiện " +
-        "thực hiện mục đích đó.” Ở tình huống 3, im lặng được Tài cao nhất vì thực tế đạt " +
-        "kết quả tốt theo thước đo tổ chức. Nhưng đạo đức Hồ Chí Minh lấy hiệu quả thực " +
-        "tế làm thước đo: im lặng cũng là hành động, và hậu quả thật là mười hai nghìn " +
-        "người mất dữ liệu.",
+        "thực hiện mục đích đó.” Tư tưởng đạo đức Hồ Chí Minh là đạo đức trong hành " +
+        "động, lấy hiệu quả thực tế làm thước đo, kiên quyết chống “bệnh nói suông, " +
+        "thói phô trương hình thức”. Ở tình huống 3, im lặng được Tài cao nhất vì thực " +
+        "tế đạt kết quả tốt theo thước đo tổ chức. Nhưng hiệu quả thực tế thật sự là " +
+        "mười hai nghìn người mất dữ liệu bốn tháng sau. Đây cũng chính là nguyên tắc " +
+        "“nói đi đôi với làm” mà giáo trình đặt lên hàng đầu: đạo đức không nằm ở lời " +
+        "nói, mà ở hành động và hậu quả thật.",
     },
     {
       title: "Đức và tài, hồng và chuyên, phẩm chất và năng lực phải thống nhất làm một",
       source: "trang 136",
       script:
         "Trang 136: “đức và tài, hồng và chuyên, phẩm chất và năng lực phải thống nhất " +
-        "làm một.” Tình huống 4 là tình huống duy nhất mà làm giỏi hơn thì hại nhiều hơn: " +
-        "viết code càng hiệu quả, càng nhiều học sinh mất ngủ. Chuyên môn không tách rời " +
-        "được đạo đức, chỉ có phương án vừa nhận làm vừa đo tác hại mới tạo ra thay đổi " +
-        "thật.",
+        "làm một. Trong đó, đạo đức là gốc, là nền tảng của người cách mạng.” Tình " +
+        "huống 4 là tình huống duy nhất mà làm giỏi hơn thì hại nhiều hơn: viết code " +
+        "càng hiệu quả, càng nhiều học sinh mất ngủ. Chuyên môn không tách rời được " +
+        "đạo đức, chỉ có phương án vừa nhận làm vừa đo tác hại mới tạo ra thay đổi " +
+        "thật. Trong Di chúc, Người còn dặn: mỗi đảng viên, cán bộ phải “thật sự thấm " +
+        "nhuần đạo đức cách mạng, thật sự cần kiệm liêm chính, chí công vô tư” (trang " +
+        "136).",
     },
   ],
   quyen_luc: [
     {
-      title: "Vừa hiền lại vừa minh",
-      source: "trang 92",
+      title: "Cán bộ lấy đạo đức làm cốt cán",
+      source: "trang 136",
       script:
-        "Trang 92: “để làm người thay mặt nhân dân phải gồm đủ cả đức và tài, phải vừa " +
-        "hiền lại vừa minh.” Hiền là đức, Minh là tài. Tình huống 5: chọn An là chọn minh " +
-        "bỏ hiền (giỏi nhưng thao túng báo cáo); chọn Bình là chọn hiền bớt minh (trung " +
-        "thực nhưng chậm). Chọn cả hai và giám sát chặt mới gần đúng tinh thần vừa hiền " +
-        "vừa minh.",
+        "Trang 136: “Việc nước lấy Đoàn thể làm cốt cán. Việc Đoàn thể lấy cán bộ làm " +
+        "cốt cán. Cán bộ lấy đạo đức làm cốt cán.” Tình huống 5 đặt bạn chọn ai vào vị " +
+        "trí nòng cốt: An giỏi chuyên môn nhưng từng lách luật, hay Bình năng lực trung " +
+        "bình nhưng luôn trung thực. Nếu đạo đức mới là thứ làm nên “cốt cán”, chọn An " +
+        "là bỏ qua đúng điều kiện gốc; chọn cả hai và giám sát chặt mới giữ được cả " +
+        "năng lực lẫn đạo đức. Giáo trình cũng viết: “mọi việc thành hay bại, chủ " +
+        "chốt là do cán bộ có thấm nhuần đạo đức cách mạng hay không” (trang 135).",
     },
     {
       title: "Cần – Kiệm – Liêm – Chính, Chí công vô tư",
-      source: "trang 141–143",
+      source: "trang 140–142",
       script:
-        "Trang 141-143: Liêm là trong sạch, không tham địa vị tiền tài, “chỉ có một thứ " +
-        "ham là ham học, ham làm, ham tiến bộ.” Trang 141-142 cảnh báo: “có quyền mà thiếu " +
-        "lương tâm là có dịp đục khoét, có dịp dĩ công vi tư.” Tình huống 6: tự ý dùng quỹ " +
-        "nhóm dù định trả lại vẫn là lẫn lộn công tư; không đụng quỹ mới giữ đúng tinh " +
-        "thần Liêm.",
+        "Trang 140: “Liêm là trong sạch, không tham lam... chỉ có một thứ ham là ham " +
+        "học, ham làm, ham tiến bộ.” Trang 141-142: “có quyền mà thiếu lương tâm là có " +
+        "dịp đục khoét, có dịp ăn của đút, có dịp dĩ công vi tư. Vì vậy cán bộ phải " +
+        "thực hành chữ Liêm trước, để làm kiểu mẫu cho dân.” Tình huống 6: tự ý dùng " +
+        "quỹ nhóm dù định trả lại vẫn là lẫn lộn công tư; không đụng quỹ mới giữ đúng " +
+        "tinh thần Liêm. Bốn đức tính Cần, Kiệm, Liêm, Chính được ví như bốn mùa của " +
+        "trời, bốn phương của đất: “thiếu một đức, thì không thành người” (trang 142).",
     },
   ],
 };
@@ -167,16 +195,19 @@ const SCENARIOS = [
     owner: "B",
     title: "Deadline & cám dỗ copy đồ án",
     stimulus:
-      "Còn 12 tiếng nữa hết hạn nộp đồ án. Sản phẩm bạn chưa xong. Một anh khóa trên " +
-      "gửi file gần giống đề bài, chỉ cần sửa vài chỗ là “qua”.",
+      "Còn 12 tiếng nữa là hạn nộp đồ án nhóm. Sản phẩm của bạn chưa xong, trong khi " +
+      "một anh khóa trên gửi cho bạn file đồ án gần giống đề bài, chỉ cần sửa vài chỗ " +
+      "là “qua”.",
     choices: [
       {
         text: "Copy & sửa nhanh để nộp đúng hạn",
         deltaDuc: -2,
         deltaTai: -2,
         feedback:
-          "Nộp đúng giờ, nhưng là gian dối học thuật. Nếu bị phát hiện, bạn nhận điểm 0 " +
-          "hoặc bị kỷ luật, và không có năng lực thật đứng sau.",
+          "Bạn lấy file có sẵn, đổi tên biến và số liệu rồi nộp đúng giờ. Deadline " +
+          "trước mắt được giải quyết, nhưng đây là gian dối học thuật: nếu bị phát " +
+          "hiện, bạn có thể nhận điểm 0 hoặc bị kỷ luật, và không tích lũy được năng " +
+          "lực thật nào.",
         source: "trang 146",
       },
       {
@@ -184,8 +215,9 @@ const SCENARIOS = [
         deltaDuc: 2,
         deltaTai: 1,
         feedback:
-          "Bạn xin giảng viên thêm thời gian, rồi tự làm bằng năng lực thật. Có thể bị " +
-          "trừ điểm trễ hạn, nhưng giữ được liêm chính và sản phẩm là của chính mình.",
+          "Bạn chủ động liên hệ giảng viên, trình bày khó khăn và xin thêm thời gian " +
+          "hợp lý, rồi hoàn thành bằng năng lực thật. Có thể bị trừ điểm vì nộp trễ, " +
+          "nhưng bạn giữ được liêm chính và sản phẩm là của chính mình.",
         source: "trang 146",
       },
       {
@@ -193,14 +225,16 @@ const SCENARIOS = [
         deltaDuc: -1,
         deltaTai: 0,
         feedback:
-          "Bạn ghép nội dung từ nhiều nguồn và AI mà không trích dẫn. Nộp đúng hạn " +
-          "nhưng chất lượng rời rạc, có nguy cơ đạo văn, và hiểu bài hời hợt khi bị hỏi.",
+          "Bạn ghép nội dung từ nhiều tài liệu và AI mà không trích dẫn hay kiểm " +
+          "chứng. Bài nộp đúng hạn nhưng chất lượng rời rạc, có nguy cơ đạo văn một " +
+          "phần, và bạn hiểu bài khá hời hợt khi bị hỏi vấn đáp.",
         source: "trang 146",
       },
     ],
     insight:
-      "Trung thực và tự chịu trách nhiệm quan trọng hơn đúng hạn hình thức, đúng hạn " +
-      "bằng gian dối vẫn chỉ là “tài” giả (trang 146).",
+      "Theo tinh thần “xây đi đôi với chống, lấy xây làm chính” (trang 146), sự trung " +
+      "thực và tự chịu trách nhiệm quan trọng hơn việc đúng hạn về mặt hình thức, nộp " +
+      "đúng hạn bằng gian dối vẫn chỉ là một “tài” giả.",
   },
   {
     id: 2,
@@ -208,16 +242,17 @@ const SCENARIOS = [
     owner: "B",
     title: "Bạn cùng nhóm free-riding",
     stimulus:
-      "Gần nộp đồ án, bạn phát hiện một bạn trong nhóm không đóng góp gì suốt 3 tuần, " +
-      "nhưng vẫn đứng tên đầy đủ trong báo cáo.",
+      "Gần nộp đồ án, bạn phát hiện một thành viên trong nhóm gần như không đóng góp " +
+      "gì suốt 3 tuần, nhưng vẫn đứng tên đầy đủ trong báo cáo.",
     choices: [
       {
         text: "Im lặng, tự gánh phần việc còn lại",
         deltaDuc: -1,
         deltaTai: -1,
         feedback:
-          "Bạn âm thầm làm bù, nhóm “êm đẹp” trước mắt. Nhưng bất công kéo dài, bạn quá " +
-          "tải, và bạn free-riding không hề thay đổi.",
+          "Bạn không nói gì, âm thầm làm bù để nhóm “êm đẹp”. Không có mâu thuẫn ngắn " +
+          "hạn, nhưng bất công kéo dài, bạn quá tải và chất lượng phần việc chung giảm " +
+          "sút, còn bạn free-riding thì không hề thay đổi.",
         source: "trang 147",
       },
       {
@@ -225,8 +260,9 @@ const SCENARIOS = [
         deltaDuc: 2,
         deltaTai: 2,
         feedback:
-          "Bạn góp ý riêng trước, rồi báo minh bạch với nhóm nếu không cải thiện. Bạn " +
-          "free-riding có cơ hội sửa sai, nhóm công bằng hơn.",
+          "Bạn góp ý riêng trước; nếu không cải thiện thì báo minh bạch với cả nhóm " +
+          "kèm đề xuất phân công lại. Bạn free-riding có cơ hội sửa sai, nhóm công " +
+          "bằng hơn, và giảng viên có căn cứ đánh giá đúng người đúng việc.",
         source: "trang 157",
       },
       {
@@ -234,14 +270,16 @@ const SCENARIOS = [
         deltaDuc: -1,
         deltaTai: 0,
         feedback:
-          "Bạn công khai chỉ trích ngay, khiến bạn ấy mất mặt trước cả nhóm. Vấn đề được " +
-          "nêu ra, nhưng nhóm mất đoàn kết, ảnh hưởng tinh thần chung.",
+          "Bạn công khai chỉ trích ngay, không góp ý riêng trước, khiến bạn ấy mất " +
+          "mặt trước cả nhóm. Vấn đề được nêu ra, nhưng nhóm mất đoàn kết và bạn ấy có " +
+          "thể phản ứng tiêu cực, ảnh hưởng tinh thần làm việc chung.",
         source: "trang 147",
       },
     ],
     insight:
-      "Bao che là “xây” không “chống”; tố cáo gay gắt là “chống” không “xây”. Đúng tinh " +
-      "thần trang 146 là chống để xây.",
+      "Bao che là “xây” mà không “chống”; tố cáo gay gắt là “chống” mà không “xây”. " +
+      "Lựa chọn đúng tinh thần trang 146 là chống để xây, không dập tắt cơ hội sửa " +
+      "sai của người khác.",
   },
   {
     id: 3,
@@ -249,19 +287,25 @@ const SCENARIOS = [
     owner: "C",
     title: "Hai ngày trước release",
     stimulus:
-      "Bạn là developer, team 8 người, sắp ra bản lớn nhất năm (ảnh hưởng thưởng quý cả " +
-      "phòng). Bạn phát hiện lỗi phân quyền: sửa một tham số là xem được dữ liệu cá nhân " +
-      "người khác. Vá đúng cách mất 5 ngày, phải dời ngày phát hành. Sáng nay quản lý vừa " +
-      "nói “đừng vẽ thêm việc”. Chỉ mình bạn biết lỗ hổng này.",
+      "Bạn là developer trong một team tám người. Sản phẩm chuẩn bị ra bản lớn nhất " +
+      "năm, thứ mà cả team đã làm suốt năm tháng, và là cơ sở xét thưởng quý cho toàn " +
+      "bộ phòng. Chiều nay, khi rà lại phần xác thực người dùng, bạn phát hiện một lỗi " +
+      "phân quyền: chỉ cần sửa một tham số trong đường dẫn là xem được dữ liệu cá nhân " +
+      "của tài khoản khác, họ tên, số điện thoại, lịch sử giao dịch. Vá tạm thì được, " +
+      "nhưng vá đúng cách phải sửa lại toàn bộ tầng phân quyền: ít nhất năm ngày, và " +
+      "phải dời ngày phát hành, nghĩa là cả team mất thưởng quý. Sáng nay quản lý của " +
+      "bạn vừa nói: “giai đoạn này mình tập trung ra bản đã, đừng vẽ thêm việc”. Hiện " +
+      "tại, chỉ có bạn biết về lỗ hổng này.",
     choices: [
       {
         text: "Im lặng, để bản phát hành ra đúng lịch",
         deltaDuc: -2,
         deltaTai: 2,
         feedback:
-          "Bản phát hành thành công, cả phòng nhận thưởng. Nhưng 4 tháng sau, dữ liệu " +
-          "của 12.000 người dùng bị khai thác đúng lỗ hổng đó, công ty gọi là sự cố ngoài " +
-          "ý muốn, không ai truy được về bạn.",
+          "Bản phát hành thành công, chỉ số đẹp, cả phòng nhận thưởng quý và bạn được " +
+          "ghi nhận là người biết ưu tiên việc gì trước. Nhưng bốn tháng sau, dữ liệu " +
+          "của mười hai nghìn người dùng bị khai thác qua đúng lỗ hổng đó, công ty gọi " +
+          "đây là sự cố kỹ thuật ngoài ý muốn, và không ai truy được về bạn.",
         source: "trang 136",
       },
       {
@@ -269,9 +313,9 @@ const SCENARIOS = [
         deltaDuc: 2,
         deltaTai: -1,
         feedback:
-          "Ngày phát hành dời 2 tuần, cả phòng mất thưởng, bạn bị xem là người “gây " +
-          "chuyện”. Nhưng vấn đề giờ có ngày giờ, có người nhận, thành trách nhiệm của " +
-          "tổ chức.",
+          "Ngày phát hành bị dời hai tuần, cả phòng mất thưởng quý và bạn bị xem là " +
+          "người “gây chuyện”. Nhưng vấn đề giờ nằm trên giấy, có ngày giờ, có người " +
+          "nhận, nó không còn là gánh nặng của riêng bạn mà là trách nhiệm của tổ chức.",
         source: "trang 136",
       },
       {
@@ -279,9 +323,10 @@ const SCENARIOS = [
         deltaDuc: 0,
         deltaTai: 1,
         feedback:
-          "Bạn vá kịp, không ai mất thưởng, không ai biết chuyện gì xảy ra. Nhưng quy " +
-          "trình để lọt lỗ hổng vẫn nguyên vẹn, 6 tháng sau lỗi cùng loại xuất hiện ở " +
-          "phần khác, lần này người phát hiện không thức đêm như bạn.",
+          "Bạn vá kịp, phát hành đúng hạn, không ai mất thưởng và không ai biết đã có " +
+          "chuyện gì xảy ra. Nhưng quy trình kiểm tra đã để lọt lỗ hổng này vẫn nguyên " +
+          "vẹn, sáu tháng sau, một lỗi cùng loại xuất hiện ở phần khác, và lần này " +
+          "người phát hiện không thức đêm như bạn.",
         source: "trang 144",
       },
     ],
@@ -295,19 +340,24 @@ const SCENARIOS = [
     owner: "C",
     title: "Chỉ số phải tăng",
     stimulus:
-      "Bạn được giao xây tính năng tăng thời gian dùng app: thông báo giờ khuya, đẩy nội " +
-      "dung gây tranh cãi lên đầu, làm chậm thao tác thoát. Kết quả thử nghiệm: thời gian " +
-      "dùng tăng 22%, riêng nhóm dưới 18 tuổi tăng gấp đôi. Không bất hợp pháp, không lộ " +
-      "dữ liệu. Bạn viết mã, không phải người ra quyết định.",
+      "Bạn được giao xây dựng tính năng mới cho ứng dụng của công ty, mục tiêu là tăng " +
+      "thời gian sử dụng. Thiết kế đã duyệt: gửi thông báo vào khung giờ khuya tạo cảm " +
+      "giác đang bỏ lỡ điều gì đó, ưu tiên đẩy nội dung gây tranh cãi lên đầu bảng tin, " +
+      "làm chậm thao tác thoát ứng dụng thêm vài bước. Bản thử nghiệm: thời gian sử " +
+      "dụng trung bình tăng 22%, riêng nhóm dưới 18 tuổi tăng gấp đôi. Không có gì bất " +
+      "hợp pháp, không ai bị lộ dữ liệu, mọi thứ nằm trong điều khoản người dùng đã " +
+      "đồng ý. Bạn là người viết mã, không phải người ra quyết định.",
     choices: [
       {
         text: "Triển khai đúng thiết kế, làm tốt nhất có thể",
         deltaDuc: -2,
         deltaTai: 2,
         feedback:
-          "Bạn làm xuất sắc, được cân nhắc thăng chức. Một năm sau, bạn đọc bài báo về " +
-          "mất ngủ ở học sinh cấp ba, có người kể đúng trải nghiệm thuật toán của bạn " +
-          "tạo ra. Làm kém hơn thì ít người bị ảnh hưởng hơn.",
+          "Bạn làm xuất sắc: tính năng chạy mượt, chỉ số vượt kỳ vọng, bạn được nêu " +
+          "tên trong báo cáo quý và cân nhắc thăng chức. Một năm sau, bạn đọc một bài " +
+          "báo về tình trạng mất ngủ ở học sinh cấp ba, trong phần bình luận có người " +
+          "kể lại đúng trải nghiệm mà thuật toán của bạn được thiết kế để tạo ra. Nếu " +
+          "bạn làm kém hơn, ít người bị ảnh hưởng hơn.",
         source: "trang 136",
       },
       {
@@ -315,9 +365,10 @@ const SCENARIOS = [
         deltaDuc: 1,
         deltaTai: -1,
         feedback:
-          "Bạn chuyển sang bảo trì. Tính năng vẫn ra mắt, người làm thay thiếu kinh " +
-          "nghiệm nên còn dồn dập hơn thiết kế gốc. Bạn giữ tay sạch, nhưng không còn ở " +
-          "đó để lên tiếng nữa.",
+          "Quản lý không gây khó dễ, bạn được chuyển sang nhiệm vụ bảo trì. Tính năng " +
+          "vẫn ra mắt đúng lịch, một đồng nghiệp mới làm thay, cẩn thận nhưng thiếu " +
+          "kinh nghiệm nên phần thông báo còn dồn dập hơn cả thiết kế ban đầu. Bạn giữ " +
+          "được tay mình sạch, nhưng không còn ở trong phòng để nói bất cứ điều gì nữa.",
         source: "trang 136",
       },
       {
@@ -325,9 +376,11 @@ const SCENARIOS = [
         deltaDuc: 2,
         deltaTai: 2,
         feedback:
-          "Bạn mất thêm 2 tuần, bị hỏi vì sao chậm. Đề xuất bị cắt còn một nửa: chỉ tắt " +
-          "thông báo khuya cho tài khoản dưới 18 tuổi. Không phải chiến thắng, nhưng là " +
-          "thay đổi thật duy nhất, vì bạn có số liệu.",
+          "Bạn mất thêm hai tuần và bị hỏi vì sao chậm; một nửa phòng cho rằng bạn " +
+          "đang làm quá lên. Đề xuất của bạn bị cắt còn một nửa: công ty chỉ đồng ý " +
+          "tắt thông báo khuya cho tài khoản dưới 18 tuổi. Đó không phải một chiến " +
+          "thắng, nhưng là thay đổi duy nhất trong ba lựa chọn thật sự xảy ra, vì bạn " +
+          "có số liệu, thứ người đứng ngoài không thể đưa ra.",
         source: "trang 136",
       },
     ],
@@ -341,26 +394,30 @@ const SCENARIOS = [
     owner: "D",
     title: "Ai sẽ vào nhóm nòng cốt?",
     stimulus:
-      "Bạn làm trưởng nhóm, chỉ chọn một người làm phó. An giỏi chuyên môn nhưng từng " +
-      "“lách luật” và hay nói quá thành tích. Bình năng lực trung bình nhưng luôn nói " +
-      "thật, kể cả khi thất bại.",
+      "Bạn được giao làm trưởng một nhóm dự án quan trọng, chỉ được chọn một người vào " +
+      "vị trí phó nhóm. An rất giỏi chuyên môn, nhanh nhạy, từng “lách luật” để nhóm cũ " +
+      "về đích trước và hay nói quá thành tích của mình khi báo cáo. Bình năng lực " +
+      "trung bình, chưa nhiều kinh nghiệm, nhưng luôn nói thật kết quả, kể cả khi thất " +
+      "bại, và không bao giờ nhận công lao không phải của mình.",
     choices: [
       {
         text: "Chọn An, ưu tiên năng lực, bỏ qua tư cách",
         deltaDuc: -2,
         deltaTai: 2,
         feedback:
-          "Dự án ban đầu chạy nhanh, nhưng An dần thao túng báo cáo, che giấu rủi ro " +
-          "thật. Sai lầm bị giấu kín sẽ bùng phát nặng nề hơn nhiều so với phát hiện sớm.",
-        source: "trang 92",
+          "Dự án ban đầu chạy nhanh, nhưng An dần thao túng báo cáo để nhóm trông " +
+          "“hoàn hảo” trước cấp trên, che giấu rủi ro thật. Đến giữa dự án, sai lầm bị " +
+          "giấu kín bùng phát, gây thiệt hại lớn hơn nhiều so với nếu được phát hiện sớm.",
+        source: "trang 136",
       },
       {
         text: "Chọn Bình, ưu tiên trung thực, bỏ qua năng lực",
         deltaDuc: 2,
         deltaTai: -1,
         feedback:
-          "Nhóm chạy chậm hơn vì Bình cần thời gian học hỏi, nhưng báo cáo chính xác, " +
-          "vấn đề phát hiện sớm, nhóm phát triển bền vững hơn.",
+          "Nhóm chạy chậm hơn ban đầu vì Bình cần thời gian học hỏi, nhưng mọi báo " +
+          "cáo đều chính xác, vấn đề được phát hiện sớm và xử lý kịp thời. Về dài hạn, " +
+          "nhóm phát triển bền vững và được tin tưởng giao thêm dự án.",
         source: "trang 141",
       },
       {
@@ -368,14 +425,15 @@ const SCENARIOS = [
         deltaDuc: 1,
         deltaTai: 1,
         feedback:
-          "Nhóm vừa có tốc độ từ An, vừa có độ tin cậy nhờ Bình giám sát chéo. Tốn công " +
-          "sức quản lý hơn, nhưng đạt kết quả cân bằng nhất.",
+          "Nhóm vừa có tốc độ từ An, vừa có độ tin cậy nhờ Bình giám sát chéo. Cách " +
+          "này đòi hỏi bạn phải liên tục theo dõi, tốn công sức quản lý hơn, nhưng nếu " +
+          "duy trì tốt sẽ đạt kết quả cân bằng nhất.",
         source: "trang 141",
       },
     ],
     insight:
-      "“Vừa hiền lại vừa minh” (trang 92): nếu chỉ có “minh” mà thiếu “hiền”, tài năng " +
-      "có thể trở thành công cụ gây hại.",
+      "“Cán bộ lấy đạo đức làm cốt cán” (trang 136): nếu chọn năng lực mà bỏ qua đạo " +
+      "đức, người được chọn có thể trở thành rủi ro lớn nhất cho chính tập thể.",
   },
   {
     id: 6,
@@ -383,17 +441,20 @@ const SCENARIOS = [
     owner: "D",
     title: "Quỹ nhóm trong tay bạn",
     stimulus:
-      "Bạn giữ quỹ chung nhóm (2 triệu đồng). Phút cuối, bạn phát hiện có thể “linh " +
-      "động” chi 300.000đ cho việc cá nhân mà gần như chắc chắn không ai biết, vì bạn " +
-      "là người duy nhất nắm sổ.",
+      "Bạn được giao giữ quỹ chung của nhóm (2 triệu đồng, dùng để mua vật tư cho dự " +
+      "án). Vào phút cuối, bạn phát hiện có thể “linh động” chi 300.000đ từ quỹ này " +
+      "cho việc cá nhân, mà gần như chắc chắn không ai trong nhóm biết, vì bạn là " +
+      "người duy nhất nắm sổ chi tiêu.",
     choices: [
       {
         text: "Tự ý dùng 300.000đ, định bụng “trả lại sau”",
         deltaDuc: -2,
         deltaTai: 0,
         feedback:
-          "Việc cá nhân giải quyết ngay, nhưng đến lúc cần chi vật tư thì quỹ thiếu " +
-          "hụt, nhóm bị động. Dù hoàn trả đủ, niềm tin nhóm đã rạn nứt khi sự việc lộ ra.",
+          "Việc cá nhân giải quyết được ngay, nhưng đến ngày cần chi vật tư, quỹ " +
+          "thiếu hụt và nhóm bị động. Dù sau đó bạn hoàn trả đủ, niềm tin của nhóm " +
+          "dành cho bạn đã rạn nứt khi sự việc lộ ra, minh bạch tài chính luôn để lại " +
+          "dấu vết.",
         source: "trang 141",
       },
       {
@@ -401,8 +462,9 @@ const SCENARIOS = [
         deltaDuc: 2,
         deltaTai: -1,
         feedback:
-          "Việc cá nhân giải quyết chậm hơn, nhưng quỹ nhóm nguyên vẹn, minh bạch tuyệt " +
-          "đối. Nhóm tín nhiệm giao bạn quản lý quỹ lớn hơn sau này.",
+          "Việc cá nhân giải quyết chậm hơn hoặc khó khăn hơn, nhưng quỹ nhóm nguyên " +
+          "vẹn, minh bạch tuyệt đối. Nhóm tín nhiệm giao bạn quản lý các quỹ lớn hơn " +
+          "trong tương lai.",
         source: "trang 141",
       },
       {
@@ -410,15 +472,16 @@ const SCENARIOS = [
         deltaDuc: 1,
         deltaTai: 0,
         feedback:
-          "Mất thêm thời gian trao đổi, nhưng chi tiêu trở thành quyết định tập thể, " +
-          "không phải hành vi đơn phương. Không có ai bị “qua mặt”.",
+          "Mất thêm thời gian trao đổi, nhưng nếu nhóm đồng ý, việc chi tiêu trở " +
+          "thành quyết định tập thể chứ không phải hành vi đơn phương. Nếu nhóm không " +
+          "đồng ý, bạn buộc phải tìm cách khác, nhưng không có ai bị “qua mặt”.",
         source: "trang 142",
       },
     ],
     insight:
-      "Trang 141–142: “có quyền mà thiếu lương tâm là có dịp dĩ công vi tư.” Liêm không " +
-      "phải là không có nhu cầu cá nhân, mà là không lợi dụng vị trí được giao để giải " +
-      "quyết nhu cầu đó.",
+      "Trang 141–142: “có quyền mà thiếu lương tâm là có dịp đục khoét, có dịp ăn của " +
+      "đút, có dịp dĩ công vi tư.” Liêm không phải là không có nhu cầu cá nhân, mà là " +
+      "không lợi dụng vị trí được giao phó để giải quyết nhu cầu đó.",
   },
 ];
 
@@ -647,7 +710,7 @@ const QUIZ_QUESTIONS = [
     ],
     correct: 3,
     explanation:
-      "Mục thực trạng đạo đức và liên hệ sinh viên (trang 153–157): giáo trình đặt vấn đề " +
+      "Mục thực trạng đạo đức và liên hệ sinh viên (trang 157–158): giáo trình đặt vấn đề " +
       "trực tiếp với thanh niên trí thức “Học để làm gì? Học để phục vụ ai?”, làm cơ sở để mỗi " +
       "người xác định phương hướng học tập và sửa chữa khuyết điểm.",
   },
