@@ -373,7 +373,7 @@ h1, h2, h3, h4 {
   gap: 10px;
 }
 
-.layer-label, .layer-label-static {
+.layer-label {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -383,9 +383,25 @@ h1, h2, h3, h4 {
   font-size: 0.95rem;
   color: var(--slate-900);
   background: var(--gold-100);
-  border: 1px solid var(--gold-400);
+  border: 1.5px solid var(--gold-400);
   border-radius: var(--radius-full);
   padding: 5px 16px;
+  cursor: pointer;
+  box-shadow: var(--shadow-xs);
+  transition: all var(--duration-fast);
+}
+
+.layer-label:hover {
+  background: var(--gold-200);
+  border-color: var(--gold-600);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.layer-hint-text {
+  font-size: 0.82rem;
+  color: var(--slate-500);
+  font-style: italic;
 }
 
 .progress-step-counter {

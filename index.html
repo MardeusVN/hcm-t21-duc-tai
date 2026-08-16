@@ -12,9 +12,9 @@
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   
   <!-- Design System & Modular Stylesheets -->
-  <link rel="stylesheet" href="css/tokens.css?v=2" />
-  <link rel="stylesheet" href="css/components.css?v=2" />
-  <link rel="stylesheet" href="css/main.css?v=2" />
+  <link rel="stylesheet" href="css/tokens.css?v=3" />
+  <link rel="stylesheet" href="css/components.css?v=3" />
+  <link rel="stylesheet" href="css/main.css?v=3" />
 </head>
 <body>
 
@@ -50,6 +50,12 @@
           <span class="step-name">Ôn tập Quiz</span>
         </div>
       </nav>
+
+      <div class="header-actions">
+        <button type="button" class="header-btn theory-quick-btn" data-theory-key="duc" title="Tra cứu nhanh lý thuyết">
+          <span>📖</span> <span class="btn-text">Lý thuyết</span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -105,6 +111,17 @@
           </div>
         </div>
 
+        <!-- Theory Triggers Row -->
+        <div class="theory-trigger-row" role="region" aria-label="Tra cứu lý thuyết nền tảng">
+          <span class="theory-trigger-label">Lý thuyết cần nắm vững:</span>
+          <button type="button" class="theory-trigger duc" data-theory-key="duc" aria-haspopup="dialog" aria-expanded="false">
+            <span>📖</span> <span>Khái niệm Đức (tr.134-137)</span>
+          </button>
+          <button type="button" class="theory-trigger tai" data-theory-key="tai" aria-haspopup="dialog" aria-expanded="false">
+            <span>⚡</span> <span>Khái niệm Tài (tr.136-137)</span>
+          </button>
+        </div>
+
         <div class="hero-cta-wrap">
           <button type="button" id="btn-start" class="btn-primary btn-hero-start" disabled>
             <span>Bắt đầu khám phá (6 Tình huống)</span>
@@ -122,9 +139,10 @@
         <!-- Header: Layer Badge & Progress Bar -->
         <div class="gameplay-header-row">
           <div class="layer-badge-wrap">
-            <span id="layer-label" class="layer-label-static">
-              <span>🎓</span> <span>Tầng sinh viên</span>
-            </span>
+            <button type="button" id="layer-label" class="layer-label" aria-haspopup="dialog" aria-expanded="false" title="Nhấn để tra cứu lý thuyết tầng này">
+              <span>🎓</span> <span>Tầng sinh viên</span> ▾
+            </button>
+            <span class="layer-hint-text">(Nhấn để xem lý thuyết)</span>
           </div>
           <span id="progress-label" class="progress-step-counter" aria-live="polite">Tình huống 1/6</span>
         </div>
@@ -295,13 +313,89 @@
 
         <p id="scope-note-result" class="scope-note"></p>
 
+        <!-- Theory Trigger Row on Results -->
+        <div class="theory-trigger-row" role="region" aria-label="Tra cứu kết luận học thuật">
+          <span class="theory-trigger-label">Bài học tư tưởng:</span>
+          <button type="button" class="theory-trigger ket-luan" data-theory-key="ket_luan" aria-haspopup="dialog" aria-expanded="false">
+            <span>📖</span> <span>Kết luận &amp; Thực trạng đạo đức (tr.157–158)</span>
+          </button>
+        </div>
+
         <div class="result-actions-toolbar">
+          <button type="button" id="btn-view-reference" class="btn-secondary">
+            <span>📚</span> <span>Xem cơ sở lý luận &amp; trích dẫn</span>
+          </button>
           <button type="button" id="btn-view-quiz" class="btn-primary">
             <span>📝</span> <span>Ôn tập trắc nghiệm (10 câu)</span>
           </button>
           <button type="button" id="btn-replay" class="btn-secondary">
             <span>🔄</span> <span>Trải nghiệm lại từ đầu</span>
           </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============ SCREEN 3: TRANG CƠ SỞ LÝ LUẬN & TRÍCH DẪN SÁCH ============ -->
+    <section id="screen-3" class="screen hidden" aria-labelledby="reference-heading">
+      <div class="app-unified-card reference-card">
+        
+        <div class="reference-top-nav">
+          <button type="button" id="btn-back-from-reference" class="btn-secondary btn-back-action">
+            <span>←</span> <span>Quay lại</span>
+          </button>
+          <span class="section-tag">Tài liệu học thuật HCM202</span>
+        </div>
+
+        <h2 id="reference-heading" class="reference-main-title">Cơ Sở Lý Luận &amp; Trích Dẫn Giáo Trình</h2>
+        <p class="reference-subtitle">Tổng hợp trích đoạn, nguyên tắc và đối chiếu thực tế từ Giáo trình Tư tưởng Hồ Chí Minh (Chương 6).</p>
+
+        <div class="reference-cards-grid">
+          
+          <div class="ref-card">
+            <div class="ref-card-header">
+              <span class="ref-icon">🏛️</span>
+              <h3 class="ref-card-title">Khung Lý Thuyết Gốc</h3>
+            </div>
+            <p id="theory-summary" class="ref-card-body"></p>
+          </div>
+
+          <div class="ref-card">
+            <div class="ref-card-header">
+              <span class="ref-icon">🌿</span>
+              <h3 class="ref-card-title">3 Nguyên Tắc Xây Dựng Đạo Đức</h3>
+            </div>
+            <p id="theory-principles" class="ref-card-body"></p>
+          </div>
+
+          <div class="ref-card ref-card-span-2">
+            <div class="ref-card-header">
+              <span class="ref-icon">📖</span>
+              <h3 class="ref-card-title">Trích Dẫn Số Trang 6 Tình Huống</h3>
+            </div>
+            <ul id="scenario-citations" class="citation-list">
+              <!-- Dynamically populated -->
+            </ul>
+          </div>
+
+          <div class="ref-card">
+            <div class="ref-card-header">
+              <span class="ref-icon">🤖</span>
+              <h3 class="ref-card-title">AI Declaration</h3>
+            </div>
+            <p id="ai-declaration" class="ref-card-body"></p>
+          </div>
+
+          <div class="ref-card">
+            <div class="ref-card-header">
+              <span class="ref-icon">⚖️</span>
+              <h3 class="ref-card-title">Đối Chiếu Thực Tế &amp; Pháp Luật</h3>
+            </div>
+            <ul id="external-sources" class="citation-list">
+              <!-- Dynamically populated -->
+            </ul>
+          </div>
+
         </div>
 
       </div>
@@ -385,25 +479,41 @@
 
   </main>
 
+  <!-- ============ THEORY MODAL (GLOBAL DIALOG) ============ -->
+  <div id="theory-modal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-window">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <span class="modal-icon">📖</span>
+          <h3 id="modal-title" class="modal-title-text">Những lý thuyết cần nắm vững</h3>
+        </div>
+        <button type="button" id="modal-close" class="modal-close-btn" aria-label="Đóng cửa sổ">&times;</button>
+      </div>
+      <div id="modal-body" class="modal-body-content">
+        <!-- Theory points dynamically inserted -->
+      </div>
+    </div>
+  </div>
+
   <!-- ============ PERSISTENT FOOTER ============ -->
   <footer id="site-footer" class="site-footer">
     <div class="footer-container">
       <span class="footer-copy">🤖 Nhóm HCM-T21 • Tư tưởng Hồ Chí Minh: Đức &amp; Tài</span>
-      <span style="opacity: 0.8;">HCM202 Đại học FPT</span>
+      <a href="#" id="footer-ai-link" class="footer-link">Xem cơ sở lý luận &amp; khai báo AI →</a>
     </div>
   </footer>
 
   <!-- ============ JAVASCRIPT MODULE SCRIPTS ============ -->
-  <script src="js/data/theory.js?v=2"></script>
-  <script src="js/data/scenarios.js?v=2"></script>
-  <script src="js/data/quiz.js?v=2"></script>
-  <script src="js/engine/gameState.js?v=2"></script>
-  <script src="js/engine/chartMath.js?v=2"></script>
-  <script src="js/engine/quizEngine.js?v=2"></script>
-  <script src="js/ui/modalController.js?v=2"></script>
-  <script src="js/ui/chartRenderer.js?v=2"></script>
-  <script src="js/ui/screenController.js?v=2"></script>
-  <script src="js/ui/quizRenderer.js?v=2"></script>
-  <script src="js/app.js?v=2"></script>
+  <script src="js/data/theory.js?v=3"></script>
+  <script src="js/data/scenarios.js?v=3"></script>
+  <script src="js/data/quiz.js?v=3"></script>
+  <script src="js/engine/gameState.js?v=3"></script>
+  <script src="js/engine/chartMath.js?v=3"></script>
+  <script src="js/engine/quizEngine.js?v=3"></script>
+  <script src="js/ui/modalController.js?v=3"></script>
+  <script src="js/ui/chartRenderer.js?v=3"></script>
+  <script src="js/ui/screenController.js?v=3"></script>
+  <script src="js/ui/quizRenderer.js?v=3"></script>
+  <script src="js/app.js?v=3"></script>
 </body>
 </html>

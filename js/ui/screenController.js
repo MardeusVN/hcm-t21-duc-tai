@@ -164,7 +164,8 @@
       if (layerLabelEl) {
         const icon = layerIcons[scenario.layer] || '🎓';
         const name = layerNames[scenario.layer] || scenario.layer || '';
-        layerLabelEl.innerHTML = `<span>${icon}</span> <span>${name}</span>`;
+        layerLabelEl.innerHTML = `<span>${icon}</span> <span>${name}</span> <span style="font-size:0.8em;opacity:0.7;">▾</span>`;
+        layerLabelEl.setAttribute('aria-expanded', 'false');
       }
 
       if (progressLabelEl) {
