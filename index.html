@@ -1,219 +1,409 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Đức hay Tài, HCM-T21</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Khám phá và trải nghiệm tư tưởng Hồ Chí Minh về mối quan hệ biện chứng giữa Đức và Tài qua 6 tình huống tương tác thực tế." />
+  <title>Đức hay Tài: Cái nào quan trọng hơn? — HCM-T21</title>
+  
+  <!-- Modern Editorial & Academic Luxury Typography (Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  
+  <!-- Design System & Modular Stylesheets -->
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/main.css" />
 </head>
 <body>
 
-<!-- ============ SCREEN 0, Trang mở đầu ============ -->
-<section id="screen-0" class="screen">
-  <div class="card">
-    <h1 id="site-title">[TÊN ĐỀ TÀI, nhóm điền]</h1>
-
-    <div class="vote-box">
-      <p class="vote-question">Theo bạn, <strong>đức</strong> hay <strong>tài</strong> quan trọng hơn?</p>
-      <div class="vote-buttons">
-        <button type="button" class="vote-btn duc" data-vote="duc">Đức</button>
-        <button type="button" class="vote-btn tai" data-vote="tai">Tài</button>
+  <!-- ============ PERSISTENT APP HEADER / NAVBAR ============ -->
+  <header id="site-header" class="site-header">
+    <div class="header-container">
+      <div class="brand-block">
+        <span class="brand-icon">⚖️</span>
+        <div class="brand-meta">
+          <span class="brand-badge">HCM202 • Tư tưởng Hồ Chí Minh</span>
+          <span class="brand-title">Đức hay Tài</span>
+        </div>
       </div>
+
+      <nav class="app-stepper" aria-label="Tiến trình trải nghiệm">
+        <div class="step-item active" data-step="0">
+          <span class="step-num">1</span>
+          <span class="step-name">Khảo sát</span>
+        </div>
+        <span class="step-separator">›</span>
+        <div class="step-item" data-step="1">
+          <span class="step-num">2</span>
+          <span class="step-name">6 Tình huống</span>
+        </div>
+        <span class="step-separator">›</span>
+        <div class="step-item" data-step="2">
+          <span class="step-num">3</span>
+          <span class="step-name">Ma trận kết quả</span>
+        </div>
+        <span class="step-separator">›</span>
+        <div class="step-item" data-step="5">
+          <span class="step-num">4</span>
+          <span class="step-name">Ôn tập Quiz</span>
+        </div>
+      </nav>
     </div>
+  </header>
 
-    <p class="intro-text">[2–3 câu mô tả cách chơi, nhóm điền: bạn sẽ trải qua 6 tình huống, mỗi lựa chọn ảnh hưởng đến điểm Đức và Tài của bạn...]</p>
+  <!-- ============ MAIN INTERACTIVE APPLICATION CONTAINER ============ -->
+  <main id="main-content">
 
-    <div class="theory-trigger-row">
-      <span class="theory-trigger-label">Kiến thức cần nắm vững:</span>
-      <button type="button" class="theory-trigger duc" data-theory-key="duc">Đức</button>
-      <button type="button" class="theory-trigger tai" data-theory-key="tai">Tài</button>
-    </div>
+    <!-- ============ SCREEN 0: TRANG MỞ ĐẦU & KHẢO SÁT HERO ============ -->
+    <section id="screen-0" class="screen" aria-labelledby="site-title">
+      <div class="app-unified-card hero-card">
+        
+        <div class="card-header-center">
+          <span class="section-tag">HCM-T21 • Chuyên đề Giáo dục Đạo đức</span>
+          <h1 id="site-title" class="hero-main-title">Đức hay Tài: Cái nào quan trọng hơn?</h1>
+        </div>
 
-    <button type="button" id="btn-start" class="btn-primary" disabled>Bắt đầu</button>
-  </div>
-</section>
+        <!-- Hero Visual Banner -->
+        <div id="hero-banner-container" class="visual-container aspect-16-9 hero-visual-box" aria-hidden="true">
+          <img id="hero-banner-img" src="assets/images/hero_banner.png" alt="Đức & Tài trong tư tưởng Hồ Chí Minh" class="visual-img" loading="eager" />
+          <div class="visual-overlay"></div>
+          <div class="visual-fallback" id="hero-banner-fallback">
+            <span class="visual-fallback-icon">⚖️</span>
+            <p class="visual-fallback-title">Đức &amp; Tài trong Tư tưởng Hồ Chí Minh</p>
+          </div>
+        </div>
 
-<!-- ============ SCREEN 1, Trang chơi (lặp 6 lần) ============ -->
-<section id="screen-1" class="screen hidden">
-  <div class="card">
-    <div class="progress-bar">
-      <div class="progress-meta">
-        <button type="button" id="layer-label" class="layer-label" aria-expanded="false">[Tên tầng]</button>
-        <span id="progress-label">Tình huống 1/6</span>
+        <!-- Ho Chi Minh Philosophy Quote Card -->
+        <div class="philosophy-quote-card">
+          <div class="quote-mark">“</div>
+          <p class="quote-content">
+            Cũng như sông thì có nguồn mới có nước, không có nguồn thì sông cạn. Cây phải có gốc, không có gốc thì cây héo. Người cách mạng phải có đạo đức, không có đạo đức thì dù tài giỏi mấy cũng không lãnh đạo được nhân dân.
+          </p>
+          <span class="quote-author">— Hồ Chí Minh (1947, <em>Sửa đổi lối làm việc</em>)</span>
+        </div>
+
+        <p class="intro-text">
+          Bạn sẽ trải qua 6 tình huống thực tế ở ba tầng: <strong>sinh viên</strong>, <strong>nghề nghiệp</strong> và <strong>quyền lực</strong>. Mỗi quyết định của bạn sẽ tác động độc lập đến hai trục điểm <strong>Đức</strong> và <strong>Tài</strong>. Hãy chọn theo điều bạn tin để khám phá ma trận định vị tư tưởng của bản thân!
+        </p>
+
+        <!-- Interactive Initial Voting Box -->
+        <div class="vote-box">
+          <p class="vote-question">Theo bạn, giữa <strong>Đức</strong> và <strong>Tài</strong>, yếu tố nào quan trọng hơn?</p>
+          <div class="vote-buttons" role="group" aria-label="Bình chọn quan điểm ban đầu">
+            <button type="button" class="vote-btn duc" data-vote="duc" aria-pressed="false">
+              <span class="vote-icon">📖</span>
+              <span class="vote-title">Đức</span>
+              <span class="vote-desc">Đạo đức cách mạng • Mục đích &amp; Nền tảng gốc</span>
+            </button>
+            <button type="button" class="vote-btn tai" data-vote="tai" aria-pressed="false">
+              <span class="vote-icon">⚡</span>
+              <span class="vote-title">Tài</span>
+              <span class="vote-desc">Năng lực chuyên môn • Phương tiện thực hiện</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="hero-cta-wrap">
+          <button type="button" id="btn-start" class="btn-primary btn-hero-start" disabled>
+            <span>Bắt đầu khám phá (6 Tình huống)</span>
+            <span class="btn-arrow">→</span>
+          </button>
+        </div>
+
       </div>
-      <div class="progress-track"><div id="progress-fill" class="progress-fill"></div></div>
-    </div>
+    </section>
 
-    <div id="stimulus-block" class="block">
-      <h2 class="block-label">Tình huống</h2>
-      <p id="stimulus-text">[Đoạn mô tả tình huống, placeholder]</p>
-    </div>
+    <!-- ============ SCREEN 1: TRANG CHƠI TÌNH HUỐNG (UNIFIED STREAM) ============ -->
+    <section id="screen-1" class="screen hidden" aria-labelledby="stimulus-heading">
+      <div class="app-unified-card gameplay-card">
+        
+        <!-- Header: Layer Badge & Progress Bar -->
+        <div class="gameplay-header-row">
+          <div class="layer-badge-wrap">
+            <span id="layer-label" class="layer-label-static">
+              <span>🎓</span> <span>Tầng sinh viên</span>
+            </span>
+          </div>
+          <span id="progress-label" class="progress-step-counter" aria-live="polite">Tình huống 1/6</span>
+        </div>
 
-    <div id="choices-block" class="block">
-      <h2 class="block-label">Bạn chọn gì?</h2>
-      <div id="choices-list" class="choices-list"><!-- 3 nút lựa chọn được sinh bằng JS --></div>
-    </div>
+        <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="6" aria-label="Tiến độ tình huống">
+          <div class="progress-track"><div id="progress-fill" class="progress-fill"></div></div>
+        </div>
 
-    <div id="feedback-block" class="block hidden">
-      <h2 class="block-label">Hậu quả</h2>
-      <p id="feedback-text">[Đoạn hậu quả, placeholder]</p>
-      <div class="delta-row">
-        <span id="delta-duc" class="delta-tag duc">Đức: +0</span>
-        <span id="delta-tai" class="delta-tag tai">Tài: +0</span>
+        <!-- Scenario Visual Illustration -->
+        <div id="scenario-visual-container" class="visual-container aspect-16-9 scenario-visual-box" aria-hidden="true">
+          <img id="scenario-img" src="" alt="Minh họa tình huống" class="visual-img" loading="lazy" />
+          <div class="visual-overlay"></div>
+          <div class="visual-fallback" id="scenario-fallback">
+            <span class="visual-fallback-icon" id="scenario-fallback-icon">🏛️</span>
+            <p class="visual-fallback-title" id="scenario-fallback-title">Tình huống học thuật</p>
+          </div>
+        </div>
+
+        <!-- Dilemma Stimulus Block -->
+        <div id="stimulus-block" class="stimulus-card-box">
+          <span class="section-tag">Tình huống thực tế</span>
+          <p id="stimulus-text" class="stimulus-text"></p>
+        </div>
+
+        <!-- Choices Block -->
+        <div id="choices-block" class="choices-card-box">
+          <h3 class="choices-heading">Lựa chọn hành động của bạn:</h3>
+          <div id="choices-list" class="choices-list" role="group" aria-label="Các phương án hành động">
+            <!-- 3 choice buttons dynamically injected -->
+          </div>
+        </div>
+
+        <!-- Feedback Block (Smooth Slide-In upon Choice Selection) -->
+        <div id="feedback-block" class="feedback-card-box hidden" role="region" aria-live="polite">
+          <div class="feedback-header">
+            <span class="feedback-icon">⚖️</span>
+            <h3 class="feedback-title">Hậu quả &amp; Phân tích thực tế</h3>
+          </div>
+          <p id="feedback-text" class="feedback-text"></p>
+          
+          <div class="delta-row">
+            <span class="delta-label">Biến động điểm số:</span>
+            <span id="delta-duc" class="delta-tag duc">Đức: +0</span>
+            <span id="delta-tai" class="delta-tag tai">Tài: +0</span>
+          </div>
+          
+          <p id="feedback-source" class="source-cite"></p>
+        </div>
+
+        <!-- Insight Block (Golden Callout Box) -->
+        <div id="insight-block" class="insight-card-box hidden" role="region" aria-live="polite">
+          <div class="insight-header">
+            <span class="insight-icon">🌟</span>
+            <h3 class="insight-title">Bài học rút ra</h3>
+          </div>
+          <p id="insight-text" class="insight-text"></p>
+          
+          <div class="insight-action-wrap">
+            <button type="button" id="btn-next-scenario" class="btn-primary btn-next-action">
+              <span>Tình huống tiếp theo</span>
+              <span class="btn-arrow">→</span>
+            </button>
+          </div>
+        </div>
+
       </div>
-      <p id="feedback-source" class="source-cite">[Trích giáo trình + số trang]</p>
-    </div>
+    </section>
 
-    <div id="insight-block" class="block hidden">
-      <h2 class="block-label">Bài học rút ra</h2>
-      <p id="insight-text">[Câu chốt ngắn liên hệ nguyên tắc]</p>
-      <button type="button" id="btn-next-scenario" class="btn-primary">Tình huống tiếp theo</button>
-    </div>
-  </div>
-</section>
+    <!-- ============ SCREEN 2: TRANG KẾT QUẢ & MA TRẬN 2D ============ -->
+    <section id="screen-2" class="screen hidden" aria-labelledby="result-heading">
+      <div class="app-unified-card result-card">
+        
+        <div class="card-header-center">
+          <span class="section-tag">Định Vị Tư Tưởng Bản Thân</span>
+          <h2 id="result-heading" class="result-main-title">Kết Quả Của Bạn</h2>
+        </div>
 
-<!-- ============ SCREEN 2, Trang kết quả cá nhân ============ -->
-<section id="screen-2" class="screen hidden">
-  <div class="card">
-    <h2>Kết quả của bạn</h2>
+        <!-- Bespoke Quadrant Badge Artwork -->
+        <div class="result-badge-wrap">
+          <div class="visual-container aspect-1-1 badge-visual-box">
+            <img id="result-badge-img" src="" alt="Huy hiệu kết quả" class="visual-img" loading="eager" />
+            <div class="visual-fallback" id="result-badge-fallback">
+              <span class="visual-fallback-icon">🏅</span>
+            </div>
+          </div>
+        </div>
 
-    <div class="chart-wrap">
-      <svg id="result-chart" viewBox="0 0 300 300" role="img" aria-label="Biểu đồ 2 trục Đức - Tài">
-        <rect x="0"   y="0"   width="150" height="150" class="quad-bg quad-top-left" data-quad="dang_tin_bat_luc" />
-        <rect x="150" y="0"   width="150" height="150" class="quad-bg quad-top-right" data-quad="vua_hong_vua_chuyen" />
-        <rect x="0"   y="150" width="150" height="150" class="quad-bg quad-bottom-left" data-quad="vo_hai_vo_dung" />
-        <rect x="150" y="150" width="150" height="150" class="quad-bg quad-bottom-right" data-quad="nguy_hiem_nhat" />
-        <line x1="150" y1="0" x2="150" y2="300" class="axis-line" />
-        <line x1="0" y1="150" x2="300" y2="150" class="axis-line" />
-        <text x="150" y="14" text-anchor="middle" class="axis-label">Đức ▲</text>
-        <text x="290" y="145" text-anchor="end" class="axis-label">Tài ▶</text>
-        <circle id="result-dot" cx="150" cy="150" r="7" class="result-dot" />
-      </svg>
-    </div>
+        <h3 id="quadrant-name" class="quadrant-title">[Tên góc kết quả]</h3>
+        <p id="quadrant-desc" class="quadrant-description">[Phân tích ý nghĩa học thuật]</p>
 
-    <h3 id="quadrant-name">[Tên góc kết quả]</h3>
-    <p id="quadrant-desc">[2–3 câu giải thích ý nghĩa góc này, placeholder]</p>
-    <p id="vote-compare" class="vote-compare"></p>
-    <p id="scope-note-result" class="scope-note"></p>
+        <div class="comparison-card-box">
+          <div class="compare-row">
+            <span class="compare-icon">🎯</span>
+            <p id="vote-compare" class="vote-compare"></p>
+          </div>
+        </div>
 
-    <div class="theory-trigger-row">
-      <span class="theory-trigger-label">Kiến thức cần nắm vững:</span>
-      <button type="button" class="theory-trigger" data-theory-key="ket_luan">Kết luận</button>
-    </div>
+        <!-- Radar 2-Axis Coordinate Chart -->
+        <div class="radar-section-box">
+          <div class="radar-card-header">
+            <h3 class="radar-card-title">Biểu Đồ Ma Trận Tọa Độ 2 Trục</h3>
+            <p class="radar-card-subtitle">Định vị điểm số hành vi trên mặt phẳng Đức - Tài</p>
+          </div>
 
-    <div class="result-actions">
-      <button type="button" id="btn-view-reference" class="btn-secondary">Xem cơ sở lý luận</button>
-      <button type="button" id="btn-view-quiz" class="btn-secondary">Ôn tập câu hỏi</button>
-      <button type="button" id="btn-replay" class="btn-secondary">Chơi lại</button>
-    </div>
-  </div>
-</section>
+          <div class="chart-wrap">
+            <svg id="result-chart" viewBox="0 0 300 300" role="img" aria-label="Biểu đồ 2 trục Đức - Tài">
+              <!-- Background Quadrants -->
+              <rect x="0"   y="0"   width="150" height="150" class="quad-bg quad-top-left" data-quad="dang_tin_bat_luc" />
+              <rect x="150" y="0"   width="150" height="150" class="quad-bg quad-top-right" data-quad="vua_hong_vua_chuyen" />
+              <rect x="0"   y="150" width="150" height="150" class="quad-bg quad-bottom-left" data-quad="vo_hai_vo_dung" />
+              <rect x="150" y="150" width="150" height="150" class="quad-bg quad-bottom-right" data-quad="nguy_hiem_nhat" />
 
-<!-- ============ SCREEN 3, Trang cơ sở lý luận ============ -->
-<section id="screen-3" class="screen hidden">
-  <div class="card">
-    <h2>Cơ sở lý luận</h2>
+              <!-- Grid & Threshold Lines -->
+              <line x1="0" y1="75" x2="300" y2="75" class="grid-line" />
+              <line x1="0" y1="225" x2="300" y2="225" class="grid-line" />
+              <line x1="75" y1="0" x2="75" y2="300" class="grid-line" />
+              <line x1="225" y1="0" x2="225" y2="300" class="grid-line" />
+              
+              <line x1="160" y1="0" x2="160" y2="300" class="threshold-line" />
+              <line x1="0" y1="140" x2="300" y2="140" class="threshold-line" />
 
-    <div class="block">
-      <h3 class="block-label">Khung lý thuyết gốc</h3>
-      <p id="theory-summary">[Tóm tắt tr.135–138: đức là gốc, tài là phương tiện, phụ trách: A]</p>
-    </div>
+              <!-- Main Axis Lines -->
+              <line x1="150" y1="0" x2="150" y2="300" class="axis-line" />
+              <line x1="0" y1="150" x2="300" y2="150" class="axis-line" />
 
-    <div class="block">
-      <h3 class="block-label">3 nguyên tắc rèn đức</h3>
-      <p id="theory-principles">[Tóm tắt tr.144–148, phụ trách: A]</p>
-    </div>
+              <!-- Axis Labels -->
+              <text x="150" y="14" text-anchor="middle" class="axis-label">▲ ĐỨC (+)</text>
+              <text x="150" y="294" text-anchor="middle" class="axis-label">▼ ĐỨC (-)</text>
+              <text x="290" y="145" text-anchor="end" class="axis-label">TÀI (+) ▶</text>
+              <text x="10" y="145" text-anchor="start" class="axis-label">◀ TÀI (-)</text>
 
-    <div class="block">
-      <h3 class="block-label">6 tình huống &amp; trích dẫn</h3>
-      <ul id="scenario-citations" class="citation-list"><!-- sinh tự động từ SCENARIOS --></ul>
-    </div>
+              <!-- Quadrant Names in Chart -->
+              <text x="75" y="45" class="quad-label">Đáng tin nhưng bất lực</text>
+              <text x="225" y="45" class="quad-label">Vừa hồng vừa chuyên</text>
+              <text x="75" y="265" class="quad-label">Vô hại vì vô dụng</text>
+              <text x="225" y="265" class="quad-label">Nguy hiểm nhất</text>
 
-    <div class="block">
-      <h3 class="block-label">AI Declaration</h3>
-      <p id="ai-declaration">[Công cụ dùng, phần giữ, phần sửa/bỏ, nhóm điền]</p>
-    </div>
+              <!-- Dynamic Radar Pulsing Ring & Result Dot -->
+              <circle id="radar-ring" cx="150" cy="150" r="10" class="radar-ring" />
+              <circle id="result-dot" cx="150" cy="150" r="7" class="result-dot" tabindex="0" />
+            </svg>
+          </div>
 
-    <div class="block">
-      <h3 class="block-label">Ghi chú ranh giới sản phẩm</h3>
-      <p id="scope-note-theory">[Tình huống là mô phỏng, không phải sự kiện có thật, nhóm điền]</p>
-    </div>
+          <!-- Quadrant Guide Cards -->
+          <div class="quadrant-guide-grid">
+            <div class="quad-guide-item quad-top-right-box">
+              <span class="guide-tag">🏆 Góc I</span>
+              <strong>Vừa hồng vừa chuyên</strong>
+              <small>Đức cao, Tài cao • Mục tiêu lý tưởng</small>
+            </div>
+            <div class="quad-guide-item quad-top-left-box">
+              <span class="guide-tag">🛡️ Góc II</span>
+              <strong>Đáng tin nhưng bất lực</strong>
+              <small>Đức cao, Tài thấp • Thiếu tài việc khó thành</small>
+            </div>
+            <div class="quad-guide-item quad-bottom-right-box">
+              <span class="guide-tag">⚠️ Góc IV</span>
+              <strong>Nguy hiểm nhất</strong>
+              <small>Đức thấp, Tài cao • Càng giỏi càng gây hại</small>
+            </div>
+            <div class="quad-guide-item quad-bottom-left-box">
+              <span class="guide-tag">🍂 Góc III</span>
+              <strong>Vô hại vì vô dụng</strong>
+              <small>Đức thấp, Tài thấp • Thụ động, nói suông</small>
+            </div>
+          </div>
+        </div>
 
-    <div class="block">
-      <h3 class="block-label">Nguồn kiểm chứng khác</h3>
-      <ul id="external-sources" class="citation-list"><!-- nhóm điền --></ul>
-    </div>
+        <p id="scope-note-result" class="scope-note"></p>
 
-    <button type="button" id="btn-back-from-reference" class="btn-secondary">Quay lại</button>
-  </div>
-</section>
+        <div class="result-actions-toolbar">
+          <button type="button" id="btn-view-quiz" class="btn-primary">
+            <span>📝</span> <span>Ôn tập trắc nghiệm (10 câu)</span>
+          </button>
+          <button type="button" id="btn-replay" class="btn-secondary">
+            <span>🔄</span> <span>Trải nghiệm lại từ đầu</span>
+          </button>
+        </div>
 
-<!-- ============ SCREEN 5, Ôn tập câu hỏi (quiz đang làm) ============ -->
-<section id="screen-5" class="screen hidden">
-  <div class="card">
-    <div class="progress-bar">
-      <div class="progress-meta">
-        <span class="layer-label">Ôn tập kiến thức</span>
-        <span id="quiz-progress-label">Câu 1/10</span>
       </div>
-      <div class="progress-track"><div id="quiz-progress-fill" class="progress-fill"></div></div>
+    </section>
+
+    <!-- ============ SCREEN 5: TRANG ÔN TẬP TRẮC NGHIỆM (QUIZ STATION) ============ -->
+    <section id="screen-5" class="screen hidden" aria-labelledby="quiz-heading">
+      <div class="app-unified-card quiz-card">
+        
+        <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="10" aria-label="Tiến độ ôn tập">
+          <div class="progress-meta">
+            <span class="layer-label-static">Ôn tập kiến thức giáo trình</span>
+            <span id="quiz-progress-label" aria-live="polite">Câu 1/10</span>
+          </div>
+          <div class="progress-track"><div id="quiz-progress-fill" class="progress-fill"></div></div>
+        </div>
+
+        <div class="quiz-question-box">
+          <span class="section-tag">Câu hỏi kiểm tra</span>
+          <h2 id="quiz-heading" class="quiz-question-heading">
+            <span id="quiz-question-text">[Nội dung câu hỏi]</span>
+          </h2>
+        </div>
+
+        <div class="quiz-options-box">
+          <div id="quiz-options-list" class="choices-list" role="group" aria-label="Các phương án trả lời">
+            <!-- 4 quiz options injected -->
+          </div>
+        </div>
+
+        <!-- Instant Feedback Block -->
+        <div id="quiz-feedback-block" class="block quiz-feedback-box hidden" role="region" aria-live="polite">
+          <div class="quiz-feedback-header">
+            <span id="quiz-feedback-label" class="quiz-feedback-badge">Chính xác</span>
+          </div>
+          <p id="quiz-feedback-text" class="quiz-feedback-text"></p>
+          
+          <div class="quiz-action-wrap">
+            <button type="button" id="btn-next-quiz" class="btn-primary btn-next-quiz-action">
+              <span>Câu tiếp theo</span>
+              <span class="btn-arrow">→</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============ SCREEN 6: KẾT QUẢ ÔN TẬP QUIZ ============ -->
+    <section id="screen-6" class="screen hidden" aria-labelledby="quiz-result-heading">
+      <div class="app-unified-card quiz-summary-card">
+        
+        <div class="card-header-center">
+          <span class="section-tag">Tổng Kết Ôn Tập</span>
+          <h2 id="quiz-result-heading" class="summary-main-title">Kết Quả Ôn Tập Của Bạn</h2>
+        </div>
+
+        <div class="score-display-box">
+          <span class="score-icon">🎓</span>
+          <p id="quiz-score-text" class="quiz-score-highlight">Bạn trả lời đúng 0/10 câu.</p>
+        </div>
+
+        <div class="review-block-box">
+          <h3 class="review-title">Tổng hợp câu cần lưu ý:</h3>
+          <ul id="quiz-review-list" class="quiz-review-items">
+            <!-- Dynamic list of missed questions with correct answers -->
+          </ul>
+        </div>
+
+        <div class="quiz-result-actions">
+          <button type="button" id="btn-retry-quiz" class="btn-secondary">
+            <span>🔄</span> <span>Làm lại bài ôn tập</span>
+          </button>
+          <button type="button" id="btn-back-from-quiz" class="btn-primary">
+            <span>📊</span> <span>Quay lại kết quả ma trận</span>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ PERSISTENT FOOTER ============ -->
+  <footer id="site-footer" class="site-footer">
+    <div class="footer-container">
+      <span class="footer-copy">🤖 Nhóm HCM-T21 • Tư tưởng Hồ Chí Minh: Đức &amp; Tài</span>
+      <span style="opacity: 0.8;">HCM202 Đại học FPT</span>
     </div>
+  </footer>
 
-    <div class="block">
-      <h2 class="block-label">Câu hỏi</h2>
-      <p id="quiz-question-text">[Câu hỏi, placeholder]</p>
-    </div>
-
-    <div class="block">
-      <div id="quiz-options-list" class="choices-list"><!-- 4 lựa chọn được sinh bằng JS --></div>
-    </div>
-
-    <div id="quiz-feedback-block" class="block hidden">
-      <h2 class="block-label" id="quiz-feedback-label">Chính xác</h2>
-      <p id="quiz-feedback-text">[Giải thích + trích nguồn, placeholder]</p>
-      <button type="button" id="btn-next-quiz" class="btn-primary">Câu tiếp theo</button>
-    </div>
-  </div>
-</section>
-
-<!-- ============ SCREEN 6, Kết quả ôn tập ============ -->
-<section id="screen-6" class="screen hidden">
-  <div class="card">
-    <h2>Kết quả ôn tập</h2>
-    <p id="quiz-score-text" class="vote-compare">Bạn trả lời đúng 0/10 câu.</p>
-
-    <div class="block">
-      <h3 class="block-label">Câu cần xem lại</h3>
-      <ul id="quiz-review-list" class="citation-list"><!-- sinh tự động --></ul>
-    </div>
-
-    <div class="result-actions">
-      <button type="button" id="btn-retry-quiz" class="btn-secondary">Làm lại</button>
-      <button type="button" id="btn-back-from-quiz" class="btn-secondary">Quay lại kết quả</button>
-    </div>
-  </div>
-</section>
-
-<!-- ============ MODAL, "Những lý thuyết cần nắm vững" (dùng chung cho A/B/C/D/E) ============ -->
-<div id="theory-modal" class="modal-overlay hidden">
-  <div class="modal-window" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <div class="modal-header">
-      <h3 id="modal-title" class="block-label">Những lý thuyết cần nắm vững</h3>
-      <button type="button" id="modal-close" class="modal-close" aria-label="Đóng">&times;</button>
-    </div>
-    <div id="modal-body"><!-- sinh bằng JS: mỗi điểm lý thuyết + script thuyết trình --></div>
-  </div>
-</div>
-
-<!-- ============ FOOTER, luôn hiển thị, mọi màn hình (không popup) ============ -->
-<footer id="site-footer">
-  <span>🤖 Nhóm có dùng AI hỗ trợ soạn thảo, không dùng để gán điểm hay quyết định luận điểm.</span>
-  <a href="#" id="footer-ai-link">Xem khai báo đầy đủ →</a>
-</footer>
-
-<script src="script.js"></script>
+  <!-- ============ JAVASCRIPT MODULE SCRIPTS ============ -->
+  <script src="js/data/theory.js"></script>
+  <script src="js/data/scenarios.js"></script>
+  <script src="js/data/quiz.js"></script>
+  <script src="js/engine/gameState.js"></script>
+  <script src="js/engine/chartMath.js"></script>
+  <script src="js/engine/quizEngine.js"></script>
+  <script src="js/ui/modalController.js"></script>
+  <script src="js/ui/chartRenderer.js"></script>
+  <script src="js/ui/screenController.js"></script>
+  <script src="js/ui/quizRenderer.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
