@@ -26,6 +26,13 @@ const VOTE_QUESTION_INTRO =
   "tiện thực hiện mục đích đó” (trang 136). Không có lựa chọn nào tuyệt đối đúng hay sai " +
   "— hãy chọn theo điều bạn tin, rồi xem kết quả nói gì về bạn.";
 
+// Tên hiển thị cho từng tầng (dùng ở Screen 1 và bảng trích dẫn Screen 3).
+const LAYER_NAMES = {
+  sinh_vien: "Tầng sinh viên",
+  nghe_nghiep: "Tầng nghề nghiệp",
+  quyen_luc: "Tầng quyền lực",
+};
+
 // SCREEN 1 — 6 tình huống, đúng thứ tự & người phụ trách ở bảng mục 2 của spec.
 // Nguyên tắc thang điểm: mỗi lựa chọn tác động MẠNH 1 trục (+2/-2) và
 // NHẸ/TRUNG TÍNH trục còn lại (-1/0/+1) để tạo đánh đổi thật giữa Đức và Tài.
@@ -418,19 +425,150 @@ const EXTERNAL_SOURCES = [
   },
 ];
 
-// SCREEN 4 — Phương án lưu dữ liệu đã chọn: B (Google Form).
-// Nhóm cập nhật TAY các số dưới đây sau khi tổng hợp Google Form, trước buổi thuyết trình.
-const CLASS_STATS = {
-  totalPlays: 0,
-  votePercentDuc: 0,
-  votePercentTai: 0,
-  quadrantPercents: {
-    vua_hong_vua_chuyen: 0,
-    dang_tin_bat_luc: 0,
-    vo_hai_vo_dung: 0,
-    nguy_hiem_nhat: 0,
+// SCREEN 5/6 — Ôn tập kiến thức (10 câu trắc nghiệm), truy cập từ nút trên Screen 2.
+// Toàn bộ trích dẫn/số trang dưới đây lấy từ Group 7 - HCM202.docx (đã đối chiếu),
+// không phải nội dung suy diễn thêm.
+const QUIZ_QUESTIONS = [
+  {
+    question: "Theo giáo trình, đạo đức và tài năng có quan hệ như thế nào?",
+    options: [
+      "Đạo đức là tiêu chuẩn cho mục đích hành động, tài là phương tiện thực hiện mục đích đó",
+      "Đạo đức và tài năng không liên quan đến nhau",
+      "Tài năng quan trọng hơn đạo đức trong mọi trường hợp",
+      "Đạo đức chỉ cần thiết với cán bộ lãnh đạo, không cần với sinh viên",
+    ],
+    correct: 0,
+    explanation:
+      "“Đạo đức là tiêu chuẩn cho mục đích hành động thì tài là phương tiện thực hiện mục " +
+      "đích đó” (trang 136).",
   },
-};
+  {
+    question:
+      "Câu “có tài mà không có đạo đức là người vô dụng, thậm chí có hại” nên hiểu như thế nào?",
+    options: [
+      "Người không có tài thì không thể làm được việc gì",
+      "Người có tài nhưng thiếu đạo đức có thể dùng năng lực để gây hại, chứ không chỉ là vô ích",
+      "Người có đạo đức thì không cần rèn luyện tài năng nữa",
+      "Câu này chỉ áp dụng cho cán bộ, không áp dụng cho sinh viên",
+    ],
+    correct: 1,
+    explanation:
+      "Trang 136: thiếu tài thì làm việc gì cũng khó, nhưng thiếu đạo đức thì vô dụng, thậm " +
+      "chí có hại — năng lực bị dùng sai mục đích sẽ gây hại chứ không chỉ đơn thuần vô ích.",
+  },
+  {
+    question: "“Đức là gốc” trong tư tưởng Hồ Chí Minh nghĩa là gì?",
+    options: [
+      "Chỉ cần có đạo đức là đủ, không cần rèn luyện chuyên môn",
+      "Đức và tài là hai thứ tách biệt, không liên quan đến nhau",
+      "Đạo đức là nền tảng, định hướng mục đích hành động; tài vẫn cực kỳ quan trọng để thực hiện mục đích đó",
+      "Đạo đức quan trọng hơn tài năng nên có thể bỏ qua việc học chuyên môn",
+    ],
+    correct: 2,
+    explanation:
+      "Trang 137: “Đức là gốc, là trước hết; tài là cực kỳ quan trọng, không có tài thì " +
+      "không xây dựng, phát triển được đất nước.” Chữ “gốc” chỉ thứ tự nền tảng, không phải " +
+      "sự thay thế.",
+  },
+  {
+    question:
+      "Nguyên tắc xây dựng đạo đức cách mạng nào đối lập trực tiếp với “bệnh nói suông”?",
+    options: [
+      "Nói đi đôi với làm, nêu gương về đạo đức",
+      "Xây đi đôi với chống",
+      "Tu dưỡng đạo đức suốt đời",
+      "Chí công vô tư",
+    ],
+    correct: 0,
+    explanation:
+      "Trang 145: nguyên tắc “nói đi đôi với làm, nêu gương về đạo đức” đối lập hoàn toàn với " +
+      "thói đạo đức giả, nói một đằng làm một nẻo.",
+  },
+  {
+    question: "“Xây đi đôi với chống, lấy xây làm chính” (trang 146) nghĩa là gì?",
+    options: [
+      "Chỉ cần phê phán cái xấu, không cần xây dựng cái tốt",
+      "Xây và chống là hai việc tách biệt, làm việc nào trước cũng được",
+      "Chỉ áp dụng cho tổ chức Đảng, không áp dụng cho cá nhân",
+      "Khơi dậy ý thức đạo đức lành mạnh phải đi liền với chống biểu hiện vô đạo đức, nhưng trọng tâm là xây dựng cái tốt",
+    ],
+    correct: 3,
+    explanation:
+      "Trang 146: “Xây phải đi đôi với chống, muốn xây phải chống, chống nhằm mục đích xây, " +
+      "lấy xây làm chính.”",
+  },
+  {
+    question: "Theo giáo trình, đạo đức cách mạng được hình thành như thế nào?",
+    options: [
+      "Có sẵn từ khi sinh ra, không cần rèn luyện",
+      "Do đấu tranh, rèn luyện bền bỉ hằng ngày mà phát triển và củng cố",
+      "Chỉ hình thành sau khi trở thành cán bộ, đảng viên",
+      "Chỉ cần học thuộc lý thuyết là đủ",
+    ],
+    correct: 1,
+    explanation:
+      "Trang 148: “Đạo đức cách mạng không phải trên trời sa xuống. Nó do đấu tranh, rèn " +
+      "luyện bền bỉ hằng ngày mà phát triển và củng cố. Cũng như ngọc càng mài càng sáng, " +
+      "vàng càng luyện càng trong.”",
+  },
+  {
+    question: "Trong trò chơi này, ngưỡng phân loại 4 kết cục được đặt theo nguyên tắc nào?",
+    options: [
+      "Lấy đúng số liệu ghi trong giáo trình",
+      "Chọn ngẫu nhiên cho phân bố đẹp",
+      "Đặt gần trung điểm biên độ thực tế của từng trục điểm Đức, Tài",
+      "Luôn đặt bằng 0 cho cả hai trục",
+    ],
+    correct: 2,
+    explanation:
+      "Ngưỡng là quy ước của nhóm nhằm phân loại kết quả (không lấy từ giáo trình), được đặt " +
+      "gần trung điểm biên độ thực tế của mỗi trục — tránh tình trạng phần lớn người chơi dồn " +
+      "vào một kết cục duy nhất.",
+  },
+  {
+    question:
+      "Kết cục nào trong trò chơi được xem là “nguy hiểm nhất”, và vì sao?",
+    options: [
+      "Đức cao, Tài thấp — vì không làm được việc gì",
+      "Đức thấp, Tài cao — vì năng lực càng giỏi thì thiệt hại gây ra càng lớn",
+      "Đức thấp, Tài thấp — vì không đóng góp được gì",
+      "Đức cao, Tài cao — vì tốn nhiều công sức nhất",
+    ],
+    correct: 1,
+    explanation:
+      "Trang 136: “thiếu đạo đức thì vô dụng, thậm chí có hại” — khi Đức thấp mà Tài cao, " +
+      "năng lực bị dùng sai mục đích khiến hậu quả nặng nề hơn, càng giỏi thiệt hại càng lớn.",
+  },
+  {
+    question:
+      "Đối với thanh niên trí thức, giáo trình đặt ra câu hỏi liên hệ nào để xác định phương hướng học tập, rèn luyện?",
+    options: [
+      "“Học ngành nào thì dễ xin việc?”",
+      "“Học để có bằng cấp hay để có việc làm tốt?”",
+      "“Học để trở thành cán bộ lãnh đạo?”",
+      "“Học để làm gì? Học để phục vụ ai?”",
+    ],
+    correct: 3,
+    explanation:
+      "Mục thực trạng đạo đức và liên hệ sinh viên (trang 153–157): giáo trình đặt vấn đề " +
+      "trực tiếp với thanh niên trí thức “Học để làm gì? Học để phục vụ ai?”, làm cơ sở để mỗi " +
+      "người xác định phương hướng học tập và sửa chữa khuyết điểm.",
+  },
+  {
+    question:
+      "Trong 5 chuẩn mực “Cần, Kiệm, Liêm, Chính, Chí công vô tư”, chữ “Liêm” được hiểu như thế nào?",
+    options: [
+      "Chỉ đơn giản là không nhận hối lộ bằng tiền",
+      "Trong sạch, không tham địa vị, tiền tài; chỉ ham học, ham làm, ham tiến bộ",
+      "Không được có bất kỳ nhu cầu vật chất cá nhân nào",
+      "Chỉ áp dụng cho cán bộ cấp cao, không áp dụng cho sinh viên",
+    ],
+    correct: 1,
+    explanation:
+      "Trang 141–143: Liêm là trong sạch, không tham địa vị, tiền tài, sung sướng — “chỉ có " +
+      "một thứ ham là ham học, ham làm, ham tiến bộ.”",
+  },
+];
 
 /* ============================================================
    LOGIC — không cần sửa phần dưới đây để điền nội dung.
@@ -442,6 +580,13 @@ const state = {
   totalDuc: 0,
   totalTai: 0,
   answeredCurrent: false,
+};
+
+const quizState = {
+  index: 0,
+  score: 0,
+  answered: false,
+  wrong: [],
 };
 
 function $(id) { return document.getElementById(id); }
@@ -478,6 +623,7 @@ function renderScenario() {
   const scenario = SCENARIOS[state.scenarioIndex];
   state.answeredCurrent = false;
 
+  $("layer-label").textContent = LAYER_NAMES[scenario.layer] || "";
   $("progress-label").textContent = `Tình huống ${state.scenarioIndex + 1}/${SCENARIOS.length}`;
   $("progress-fill").style.width = `${((state.scenarioIndex + 1) / SCENARIOS.length) * 100}%`;
   $("stimulus-text").textContent = scenario.stimulus;
@@ -592,12 +738,6 @@ $("btn-replay") && $("btn-replay").addEventListener("click", () => {
   showScreen("screen-0");
 });
 
-$("link-class-stats") && $("link-class-stats").addEventListener("click", (e) => {
-  e.preventDefault();
-  renderClassStats();
-  showScreen("screen-4");
-});
-
 /* ---------- SCREEN 3 ---------- */
 function renderReference() {
   $("theory-summary").textContent = THEORY_SUMMARY;
@@ -607,7 +747,15 @@ function renderReference() {
 
   const citationList = $("scenario-citations");
   citationList.innerHTML = "";
+  let lastLayer = null;
   SCENARIOS.forEach((s) => {
+    if (s.layer !== lastLayer) {
+      const heading = document.createElement("li");
+      heading.className = "citation-layer-heading";
+      heading.textContent = LAYER_NAMES[s.layer] || s.layer;
+      citationList.appendChild(heading);
+      lastLayer = s.layer;
+    }
     const li = document.createElement("li");
     const sources = s.choices.map((c) => c.source).filter(Boolean).join(", ");
     li.textContent = `${s.id}. ${s.title} — ${sources || "(chưa có trích dẫn)"}`;
@@ -633,23 +781,93 @@ $("btn-back-from-reference") && $("btn-back-from-reference").addEventListener("c
   showScreen("screen-2");
 });
 
-/* ---------- SCREEN 4 ---------- */
-function renderClassStats() {
-  $("stat-total-plays").textContent = CLASS_STATS.totalPlays;
-  $("stat-vote-duc").textContent = `${CLASS_STATS.votePercentDuc}%`;
-  $("stat-vote-tai").textContent = `${CLASS_STATS.votePercentTai}%`;
-
-  const list = $("stats-quadrants");
-  list.innerHTML = "";
-  Object.keys(QUADRANTS).forEach((key) => {
-    const li = document.createElement("li");
-    const pct = CLASS_STATS.quadrantPercents[key] ?? 0;
-    li.innerHTML = `<span>${QUADRANTS[key].name}</span><span>${pct}%</span>`;
-    list.appendChild(li);
-  });
+/* ---------- SCREEN 5/6 — Ôn tập câu hỏi ---------- */
+function startQuiz() {
+  quizState.index = 0;
+  quizState.score = 0;
+  quizState.answered = false;
+  quizState.wrong = [];
+  renderQuizQuestion();
+  showScreen("screen-5");
 }
 
-$("btn-back-from-stats") && $("btn-back-from-stats").addEventListener("click", () => {
+function renderQuizQuestion() {
+  const q = QUIZ_QUESTIONS[quizState.index];
+  quizState.answered = false;
+
+  $("quiz-progress-label").textContent = `Câu ${quizState.index + 1}/${QUIZ_QUESTIONS.length}`;
+  $("quiz-progress-fill").style.width =
+    `${((quizState.index + 1) / QUIZ_QUESTIONS.length) * 100}%`;
+  $("quiz-question-text").textContent = q.question;
+
+  const list = $("quiz-options-list");
+  list.innerHTML = "";
+  q.options.forEach((opt, idx) => {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "choice-btn quiz-option";
+    btn.textContent = opt;
+    btn.addEventListener("click", () => handleQuizAnswer(idx, q));
+    list.appendChild(btn);
+  });
+
+  $("quiz-feedback-block").classList.add("hidden");
+}
+
+function handleQuizAnswer(idx, q) {
+  if (quizState.answered) return;
+  quizState.answered = true;
+
+  const isCorrect = idx === q.correct;
+  if (isCorrect) quizState.score += 1;
+  else quizState.wrong.push(q);
+
+  document.querySelectorAll("#quiz-options-list .quiz-option").forEach((btn, i) => {
+    btn.disabled = true;
+    if (i === q.correct) btn.classList.add("correct");
+    else if (i === idx) btn.classList.add("incorrect");
+  });
+
+  $("quiz-feedback-label").textContent = isCorrect ? "Chính xác" : "Chưa đúng";
+  $("quiz-feedback-text").textContent = q.explanation;
+  $("btn-next-quiz").textContent =
+    quizState.index === QUIZ_QUESTIONS.length - 1 ? "Xem kết quả ôn tập" : "Câu tiếp theo";
+  $("quiz-feedback-block").classList.remove("hidden");
+}
+
+$("btn-next-quiz") && $("btn-next-quiz").addEventListener("click", () => {
+  if (quizState.index === QUIZ_QUESTIONS.length - 1) {
+    renderQuizResult();
+    showScreen("screen-6");
+  } else {
+    quizState.index += 1;
+    renderQuizQuestion();
+  }
+});
+
+function renderQuizResult() {
+  $("quiz-score-text").textContent =
+    `Bạn trả lời đúng ${quizState.score}/${QUIZ_QUESTIONS.length} câu.`;
+
+  const list = $("quiz-review-list");
+  list.innerHTML = "";
+  if (quizState.wrong.length === 0) {
+    const li = document.createElement("li");
+    li.textContent = "Bạn trả lời đúng tất cả — không có câu nào cần xem lại.";
+    list.appendChild(li);
+  } else {
+    quizState.wrong.forEach((q) => {
+      const li = document.createElement("li");
+      li.textContent = `${q.question} — Đáp án đúng: “${q.options[q.correct]}”.`;
+      list.appendChild(li);
+    });
+  }
+}
+
+$("btn-view-quiz") && $("btn-view-quiz").addEventListener("click", startQuiz);
+$("btn-retry-quiz") && $("btn-retry-quiz").addEventListener("click", startQuiz);
+
+$("btn-back-from-quiz") && $("btn-back-from-quiz").addEventListener("click", () => {
   showScreen("screen-2");
 });
 
