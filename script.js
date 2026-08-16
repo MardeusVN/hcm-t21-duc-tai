@@ -34,9 +34,10 @@ const LAYER_NAMES = {
 };
 
 // Modal "Những lý thuyết cần nắm vững": ở Screen 0 bấm nút Đức/Tài (A), ở Screen 1
-// bấm vào layer-label (B/C/D), ở Screen 2 bấm nút Kết luận (E). Đây là SCRIPT
-// THUYẾT TRÌNH đầy đủ cho cả 5 người, không phải bản tóm tắt, đọc trực tiếp khi
-// thuyết trình. Object này gộp chung các trigger không gắn với 1 tình huống cụ
+// bấm vào layer-label (B/C/D), ở Screen 2 bấm nút Kết luận (E). Script CỐ TÌNH viết
+// ngắn (~300-400 ký tự/điểm, ~20-25 giây đọc) vì showcase chỉ có 15-20 phút cho cả
+// trình bày lẫn defense; người nói chỉ cần trích đúng câu + 1 câu áp dụng, không cần
+// đọc nguyên văn. Object này gộp chung các trigger không gắn với 1 tình huống cụ
 // thể (A/E); LAYER_THEORY bên dưới là loại gắn với tình huống (B/C/D).
 const OPENING_THEORY = {
   duc: [
@@ -44,19 +45,11 @@ const OPENING_THEORY = {
       title: "Đức",
       source: "trang 134–137",
       script:
-        "Trước khi bước vào 6 tình huống, mình xin giải thích khung lý thuyết nền của cả " +
-        "trò chơi, bắt đầu từ chữ Đức.\n\n" +
-        "Giáo trình ví con người như cây, như sông: “Cũng như sông thì có nguồn mới có " +
-        "nước, không có nguồn thì sông cạn. Cây phải có gốc, không có gốc thì cây héo. " +
-        "Người cách mạng phải có đạo đức, không có đạo đức thì dù tài giỏi mấy cũng không " +
-        "lãnh đạo được nhân dân” (trang 134–135).\n\n" +
-        "Đức, theo tư tưởng Hồ Chí Minh, là đạo đức, là phẩm chất, là mục đích đúng đắn " +
-        "của hành động. Nói cách khác, Đức trả lời câu hỏi: mình làm việc này để làm gì, " +
-        "có đúng không? Trang 136 viết rõ hơn: “Đạo đức là tiêu chuẩn cho mục đích hành " +
-        "động.” Và trang 137 khẳng định: “Đức là gốc, là trước hết.”\n\n" +
-        "Nhưng chữ “gốc” ở đây dễ bị hiểu lầm. Gốc không có nghĩa là chỉ cần đức là đủ, " +
-        "mà là nền tảng, là thứ tự ưu tiên khi xây dựng con người. Vì vậy ngay sau đây, " +
-        "mình sẽ nói tiếp phần thứ hai, quan trọng không kém: chữ Tài.",
+        "Giáo trình ví con người như cây, như sông: “không có đạo đức thì dù tài giỏi " +
+        "mấy cũng không lãnh đạo được nhân dân” (trang 134–135). Đức là phẩm chất, là " +
+        "mục đích đúng đắn của hành động: “đạo đức là tiêu chuẩn cho mục đích hành động” " +
+        "(trang 136). Trang 137: “Đức là gốc, là trước hết”, nghĩa là nền tảng, không " +
+        "phải để thay thế Tài.",
     },
   ],
   tai: [
@@ -64,21 +57,11 @@ const OPENING_THEORY = {
       title: "Tài",
       source: "trang 136–137",
       script:
-        "Nếu Đức trả lời câu hỏi “làm để làm gì”, thì Tài trả lời câu hỏi: “mình có khả " +
-        "năng làm việc đó tốt hay không?”\n\n" +
-        "Trang 136 viết: “Nếu đạo đức là tiêu chuẩn cho mục đích hành động thì tài là " +
-        "phương tiện thực hiện mục đích đó. Vì vậy, con người cần có cả đức và tài, nếu " +
-        "thiếu tài thì làm việc gì cũng khó, nhưng thiếu đạo đức thì vô dụng, thậm chí có " +
-        "hại.”\n\n" +
-        "Đây là chỗ nhiều người hiểu lầm nhất khi nghe câu “đức là gốc”: tưởng rằng tài " +
-        "không quan trọng bằng. Nhưng trang 137 nói thẳng: “Tài là cực kỳ quan trọng, " +
-        "không có tài thì không xây dựng, phát triển được đất nước.” Gốc chỉ thứ tự nền " +
-        "tảng, không phải thứ để thay thế tài.\n\n" +
-        "Vì vậy, trong trò chơi hôm nay, mỗi lựa chọn của các bạn sẽ được chấm trên hai " +
-        "trục hoàn toàn độc lập, Đức và Tài, không gộp chung thành một điểm số duy nhất. " +
-        "Một lựa chọn có thể vừa đúng vừa hiệu quả, hoặc đúng nhưng chưa đủ hiệu quả, hoặc " +
-        "hiệu quả nhưng sai, và chính sự tách biệt này sẽ giúp các bạn thấy rõ đức và tài " +
-        "vận hành với nhau như thế nào qua sáu tình huống sắp tới.",
+        "Tài trả lời câu hỏi: mình có làm được việc đó tốt hay không? Trang 136: “tài là " +
+        "phương tiện thực hiện mục đích đó; thiếu tài thì làm việc gì cũng khó, thiếu đạo " +
+        "đức thì vô dụng, thậm chí có hại.” Trang 137 nói thẳng: Tài “cực kỳ quan trọng, " +
+        "không có tài thì không xây dựng, phát triển được đất nước.” Vì vậy trò chơi chấm " +
+        "hai trục Đức và Tài độc lập, không gộp chung.",
     },
   ],
   // E, kết luận, trang 153-157: gắn vào nút "Kết luận" ở Screen 2 (trang kết quả).
@@ -87,38 +70,20 @@ const OPENING_THEORY = {
       title: "Thực trạng đạo đức hiện nay",
       source: "trang 153",
       script:
-        "Sau khi cả lớp đã trải qua sáu tình huống, mình xin chốt lại bằng bức tranh thực " +
-        "trạng đạo đức mà giáo trình mô tả ở trang 153, để thấy kết quả vừa rồi không phải " +
-        "chuyện xa lạ, mà đang phản ánh đúng thực tế.\n\n" +
-        "Giáo trình đánh giá thực trạng theo hai mặt. Mặt tích cực: phần lớn sinh viên, " +
-        "thanh niên trí thức vẫn giữ được lối sống nhân hậu, tình nghĩa, trong sạch; khiêm " +
-        "tốn, cần cù, sáng tạo trong học tập và nghiên cứu; có chí lập thân, lập nghiệp; " +
-        "năng động, nhạy bén, dám đối mặt khó khăn và dám chịu trách nhiệm.\n\n" +
-        "Nhưng mặt tiêu cực cũng được nêu thẳng: đạo đức, lối sống có mặt xuống cấp đáng lo " +
-        "ngại, tình trạng suy thoái về tư tưởng chính trị, đạo đức, lối sống có chiều hướng " +
-        "gia tăng, xuất hiện chủ nghĩa cá nhân, bệnh cơ hội, quan liêu, tham nhũng, lãng " +
-        "phí.\n\n" +
-        "Nhìn lại kết quả cả lớp vừa chọn qua sáu tình huống, các bạn có thể tự thấy: mình " +
-        "đang ở nhóm nào trong bức tranh đó, phần đông chọn đúng, hay có xu hướng nghiêng " +
-        "về phía dễ dãi hơn?",
+        "Trang 153: đạo đức xã hội hiện nay có cả hai mặt. Tích cực: phần lớn sinh viên " +
+        "vẫn nhân hậu, trong sạch, cần cù, sáng tạo, có chí lập thân lập nghiệp. Tiêu cực: " +
+        "một bộ phận suy thoái tư tưởng chính trị, đạo đức, xuất hiện chủ nghĩa cá nhân, " +
+        "bệnh cơ hội, quan liêu, tham nhũng. Nhìn lại kết quả cả lớp vừa chọn, các bạn " +
+        "đang ở nhóm nào?",
     },
     {
       title: "Liên hệ sinh viên: Học để làm gì? Học để phục vụ ai?",
       source: "trang 153–157",
       script:
-        "Giáo trình chỉ rõ một bộ phận sinh viên có biểu hiện: phai nhạt niềm tin, lý " +
-        "tưởng; mất phương hướng phấn đấu; không có chí lập thân, lập nghiệp; chạy theo " +
-        "lối sống thực dụng; thiếu trách nhiệm với gia đình và xã hội.\n\n" +
-        "Và đây là câu hỏi mà giáo trình đặt ra trực tiếp cho thanh niên trí thức, cũng là " +
-        "câu mình muốn khép lại buổi thuyết trình hôm nay: “Học để làm gì? Học để phục vụ " +
-        "ai?”\n\n" +
-        "Sáu tình huống vừa rồi, từ giảng đường đến công sở đến vị trí lãnh đạo, đều xoay " +
-        "quanh một câu trả lời chung: học không chỉ để có bằng cấp hay một công việc tốt, " +
-        "mà còn để hình thành năng lực, nhân cách và trách nhiệm với bản thân, gia đình và " +
-        "xã hội. Đức là gốc để định hướng hành động, còn tài là năng lực để biến mục tiêu " +
-        "đó thành kết quả thật. Một sinh viên tốt không chỉ là người học giỏi, mà còn phải " +
-        "là người trung thực, có trách nhiệm và biết dùng năng lực của mình để tạo ra giá " +
-        "trị tích cực.",
+        "Một bộ phận sinh viên phai nhạt lý tưởng, chạy theo lối sống thực dụng, thiếu " +
+        "trách nhiệm. Câu hỏi khép lại hôm nay: “Học để làm gì? Học để phục vụ ai?” Đức " +
+        "là gốc định hướng hành động, Tài là năng lực biến mục tiêu thành kết quả thật. " +
+        "Sinh viên tốt không chỉ giỏi, mà còn trung thực và có trách nhiệm.",
     },
   ],
 };
@@ -130,38 +95,19 @@ const LAYER_THEORY = {
       title: "Xây đi đôi với chống, lấy xây làm chính",
       source: "trang 146",
       script:
-        "Nguyên tắc này là chìa khóa để hiểu Tình huống 2, lúc các bạn phát hiện một " +
-        "thành viên trong nhóm gần như không đóng góp gì suốt ba tuần, nhưng vẫn đứng tên " +
-        "đầy đủ trong báo cáo.\n\n" +
-        "Giáo trình viết ở trang 146: “Xây phải đi đôi với chống, muốn xây phải chống, " +
-        "chống nhằm mục đích xây, lấy xây làm chính.” Nghĩa là: phát hiện cái sai không phải " +
-        "để dừng lại ở đó, mà phải hướng tới sửa sai, giữ được cả sự công bằng lẫn sự đoàn " +
-        "kết.\n\n" +
-        "Nhìn lại ba lựa chọn trong tình huống: nếu chọn im lặng, tự gánh phần việc còn lại, " +
-        "đó là “xây” một chiều, không có “chống”, vì đang bao che cho một hành vi sai, và " +
-        "về lâu dài chính sự bao che đó lại gây bất công cho cả nhóm. Nếu chọn tố cáo gay " +
-        "gắt ngay trên nhóm chat, đó là “chống” mà không “xây”, đúng nguyên tắc công bằng " +
-        "nhưng thiếu tình nghĩa, dễ làm mất đoàn kết. Còn lựa chọn trao đổi thẳng thắn " +
-        "trước, rồi mới báo minh bạch với nhóm kèm đề xuất khắc phục, đây mới là “xây đi " +
-        "đôi với chống” đúng nghĩa: chống để xây, không dập tắt cơ hội sửa sai của bạn " +
-        "mình. Vì vậy lựa chọn này được điểm cao nhất ở cả hai trục Đức và Tài.",
+        "Trang 146: “xây phải đi đôi với chống, muốn xây phải chống, chống nhằm mục đích " +
+        "xây, lấy xây làm chính.” Ở tình huống 2, im lặng bao che là “xây” không “chống”; " +
+        "tố cáo gay gắt là “chống” không “xây”; trao đổi thẳng thắn rồi báo minh bạch mới " +
+        "đúng là xây đi đôi với chống, nên được điểm cao nhất.",
     },
     {
       title: "Thanh niên phải có đức, có tài",
       source: "trang 157",
       script:
-        "Câu này Hồ Chí Minh dùng để nói với thanh niên, và Tình huống 1, còn 12 tiếng " +
-        "nữa là hạn nộp đồ án, có sẵn một file gần giống đề bài để “qua”, chính là phép " +
-        "thử trực tiếp cho câu nói đó.\n\n" +
-        "Nếu chọn copy và sửa nhanh để nộp đúng hạn, các bạn có vẻ như đã “có tài”, vì " +
-        "deadline được giải quyết. Nhưng đó là một “tài” giả, vì nó không đến từ năng lực " +
-        "thật, mà từ gian dối học thuật. Nhóm chấm phương án này thấp ở cả hai trục, vừa " +
-        "thiếu đức vì gian dối, vừa thiếu tài vì không có năng lực thực chất đứng sau.\n\n" +
-        "Ngược lại, nếu chọn xin gia hạn và tự làm dù nộp trễ, đó mới là “có đức”, dám " +
-        "nhận thiếu sót, trung thực với giảng viên, và cũng là “có tài” thật, vì sản phẩm " +
-        "cuối cùng là năng lực của chính mình, dù chưa hoàn thiện tối đa. Đây là lựa chọn " +
-        "được điểm cao nhất, vì nó thể hiện đúng tinh thần “lấy xây làm chính”: sự trung " +
-        "thực và tự chịu trách nhiệm quan trọng hơn việc đúng hạn về mặt hình thức.",
+        "Hồ Chí Minh mong muốn: “Thanh niên phải có đức, có tài” (trang 157). Ở tình " +
+        "huống 1, copy đồ án để đúng hạn là “tài” giả vì đến từ gian dối. Xin gia hạn và " +
+        "tự làm dù nộp trễ mới là có đức thật (trung thực) và có tài thật (năng lực của " +
+        "chính mình), nên được điểm cao nhất cả hai trục.",
     },
   ],
   nghe_nghiep: [
@@ -170,44 +116,21 @@ const LAYER_THEORY = {
         "Đạo đức là tiêu chuẩn cho mục đích hành động, tài là phương tiện thực hiện mục đích đó",
       source: "trang 136",
       script:
-        "Đây là câu nền của toàn bộ tầng nghề nghiệp. Tình huống 3, phát hiện lỗ hổng " +
-        "bảo mật hai ngày trước ngày phát hành lớn nhất năm, là nơi câu này bộc lộ rõ " +
-        "nhất.\n\n" +
-        "Nếu chọn im lặng để bản phát hành ra đúng lịch, phương án này được Tài cộng hai, " +
-        "cao nhất toàn trò chơi, vì trên thực tế người chọn im lặng thật sự đạt kết quả " +
-        "tốt theo thước đo của tổ chức: đúng hạn, được thưởng, được khen là biết ưu tiên " +
-        "việc gì trước. Nhóm mình không hạ thấp điều đó, vì nếu trừ điểm cả hai trục cho " +
-        "phương án sai thì trò chơi sẽ thành một bài giảng đạo đức giả tạo, chọn đúng luôn " +
-        "thắng, và không chứng minh được điều gì cả.\n\n" +
-        "Nhưng chính vì im lặng có lợi thật, câu hỏi của giáo trình mới đáng hỏi: đạo đức " +
-        "Hồ Chí Minh là đạo đức trong hành động, lấy hiệu quả thực tế làm thước đo. Câu này " +
-        "chặn hai chiều. Chiều thứ nhất: có đức không có nghĩa là không làm gì sai, phải " +
-        "ra kết quả tốt. Chiều thứ hai, quan trọng hơn ở đây: người chọn im lặng không thể " +
-        "nói “tôi có làm gì đâu”, vì thước đo là hiệu quả thực tế, mà hiệu quả thực tế là " +
-        "mười hai nghìn người dùng mất dữ liệu bốn tháng sau đó.",
+        "Trang 136: “đạo đức là tiêu chuẩn cho mục đích hành động, tài là phương tiện " +
+        "thực hiện mục đích đó.” Ở tình huống 3, im lặng được Tài cao nhất vì thực tế đạt " +
+        "kết quả tốt theo thước đo tổ chức. Nhưng đạo đức Hồ Chí Minh lấy hiệu quả thực " +
+        "tế làm thước đo: im lặng cũng là hành động, và hậu quả thật là mười hai nghìn " +
+        "người mất dữ liệu.",
     },
     {
       title: "Đức và tài, hồng và chuyên, phẩm chất và năng lực phải thống nhất làm một",
       source: "trang 136",
       script:
-        "Nếu Tình huống 3 hỏi “khi biết một điều sai, bạn có nói không”, thì Tình huống 4 " +
-        "hỏi một câu khó hơn: “khi chính công việc của bạn là tạo ra điều sai đó, bạn làm " +
-        "gì?” Đây là tình huống trung tâm của cả tầng nghề nghiệp, vì nó là tình huống duy " +
-        "nhất mà làm giỏi hơn thì hại nhiều hơn.\n\n" +
-        "Ở phương án triển khai đúng thiết kế, nếu viết code kém, tính năng chạy giật, ít " +
-        "người bị ảnh hưởng. Nhưng nếu giỏi, thuật toán càng hiệu quả, càng nhiều học sinh " +
-        "mất ngủ. Câu hỏi đặt ra là: có thể tách năng lực chuyên môn khỏi đạo đức không? " +
-        "Nếu tách được, phương án “chỉ viết code, không quyết định gì” phải là phương án " +
-        "trung tính. Nhưng các bạn vừa thấy: nó không hề trung tính.\n\n" +
-        "Trang 136 viết: “đức và tài, hồng và chuyên, phẩm chất và năng lực phải thống " +
-        "nhất làm một.” Nhóm mình hiểu câu này không phải như một lời khuyên đạo đức, mà " +
-        "như một mô tả thực tế: chuyên môn và đạo đức không tách ra được. Cũng chính vì " +
-        "vậy, phương án từ chối làm chỉ được Đức cộng một, không phải cộng hai, vì đạo đức " +
-        "lấy hiệu quả thực tế làm thước đo, và người rút lui tuy giữ được mình sạch nhưng " +
-        "không tạo ra thay đổi nào, tính năng vẫn ra mắt, người làm thay còn làm tệ hơn. " +
-        "Chỉ có phương án nhận làm và đo chỉ số tác hại mới tạo ra thay đổi thật, vì ở đó " +
-        "chuyên môn được dùng làm công cụ bảo vệ mục đích đúng, đúng tinh thần thống nhất " +
-        "đức–tài.",
+        "Trang 136: “đức và tài, hồng và chuyên, phẩm chất và năng lực phải thống nhất " +
+        "làm một.” Tình huống 4 là tình huống duy nhất mà làm giỏi hơn thì hại nhiều hơn: " +
+        "viết code càng hiệu quả, càng nhiều học sinh mất ngủ. Chuyên môn không tách rời " +
+        "được đạo đức, chỉ có phương án vừa nhận làm vừa đo tác hại mới tạo ra thay đổi " +
+        "thật.",
     },
   ],
   quyen_luc: [
@@ -215,47 +138,21 @@ const LAYER_THEORY = {
       title: "Vừa hiền lại vừa minh",
       source: "trang 92",
       script:
-        "“Vừa hiền lại vừa minh” là câu Hồ Chí Minh dùng khi nói về người thay mặt nhân " +
-        "dân, vừa là đày tớ, vừa là người lãnh đạo. Hiền là đức, là sự trung thực, tận " +
-        "tụy. Minh là tài, là trí tuệ, sự sáng suốt. Trang 92 viết rõ: “để làm người thay " +
-        "mặt nhân dân phải gồm đủ cả đức và tài, phải vừa hiền lại vừa minh.”\n\n" +
-        "Tình huống 5 đặt các bạn vào vai trưởng nhóm, chỉ được chọn một người vào vị trí " +
-        "phó nhóm giữa An, giỏi chuyên môn nhưng từng lách luật và hay nói quá thành tích, " +
-        "và Bình, năng lực trung bình nhưng luôn trung thực, kể cả khi báo tin xấu.\n\n" +
-        "Nếu chọn An, đó là chọn “minh” mà bỏ “hiền”, dự án ban đầu chạy nhanh, nhưng An " +
-        "dần thao túng báo cáo để nhóm trông hoàn hảo, che giấu rủi ro thật, và sai lầm bị " +
-        "giấu kín sẽ bùng phát nặng nề hơn nhiều so với nếu được phát hiện sớm. Nếu chọn " +
-        "Bình, đó là chọn “hiền” mà bớt “minh”, nhóm chạy chậm hơn vì Bình cần thời gian " +
-        "học hỏi, nhưng mọi báo cáo đều chính xác, vấn đề được phát hiện sớm, và về dài hạn " +
-        "nhóm phát triển bền vững hơn.\n\n" +
-        "Còn nếu chọn cả hai, phân vai rõ ràng và giám sát An chặt, đây là lựa chọn gần " +
-        "nhất với “vừa hiền lại vừa minh” thật sự: vừa có tốc độ từ An, vừa có độ tin cậy " +
-        "nhờ Bình giám sát chéo. Cách này tốn công sức quản lý hơn, nhưng đó chính là cái " +
-        "giá thật của việc kết hợp cả đức và tài, chứ không phải chọn một trong hai.",
+        "Trang 92: “để làm người thay mặt nhân dân phải gồm đủ cả đức và tài, phải vừa " +
+        "hiền lại vừa minh.” Hiền là đức, Minh là tài. Tình huống 5: chọn An là chọn minh " +
+        "bỏ hiền (giỏi nhưng thao túng báo cáo); chọn Bình là chọn hiền bớt minh (trung " +
+        "thực nhưng chậm). Chọn cả hai và giám sát chặt mới gần đúng tinh thần vừa hiền " +
+        "vừa minh.",
     },
     {
       title: "Cần – Kiệm – Liêm – Chính, Chí công vô tư",
       source: "trang 141–143",
       script:
-        "Trong năm chuẩn mực Cần, Kiệm, Liêm, Chính, Chí công vô tư mà giáo trình nêu ở " +
-        "trang 141 đến 143, Tình huống 6 tập trung vào chữ Liêm. Giáo trình định nghĩa " +
-        "Liêm là trong sạch, không tham địa vị, tiền tài, sung sướng, “chỉ có một thứ ham " +
-        "là ham học, ham làm, ham tiến bộ.” Nghĩa là Liêm không phải là không có nhu cầu cá " +
-        "nhân, mà là không lợi dụng vị trí được giao phó để giải quyết nhu cầu đó.\n\n" +
-        "Tình huống đặt các bạn vào vai người giữ quỹ chung của nhóm, và phát hiện có thể " +
-        "“linh động” dùng một phần quỹ cho việc cá nhân mà gần như chắc chắn không ai biết, " +
-        "vì mình là người duy nhất nắm sổ chi tiêu. Đây chính là khoảnh khắc Hồ Chí Minh " +
-        "từng cảnh báo ở trang 141–142: “cán bộ các cơ quan, các đoàn thể, cấp cao thì " +
-        "quyền to, cấp thấp thì quyền nhỏ. Dù to hay nhỏ, có quyền mà thiếu lương tâm là có " +
-        "dịp đục khoét, có dịp ăn của đút, có dịp dĩ công vi tư.”\n\n" +
-        "Nếu chọn tự ý dùng quỹ, định bụng trả lại sau, dù ý định ban đầu không xấu, hành " +
-        "vi đã là biểu hiện của việc lẫn lộn công và tư, và minh bạch tài chính luôn để lại " +
-        "dấu vết, niềm tin của nhóm sẽ rạn nứt khi sự việc lộ ra. Nếu không đụng đến quỹ, tự " +
-        "xoay xở bằng cách khác, đây là lựa chọn giữ đúng tinh thần Liêm trọn vẹn nhất, dù " +
-        "bất tiện hơn. Còn nếu chủ động hỏi ý kiến cả nhóm trước khi dùng, đây là bài học " +
-        "về nguyên tắc công khai: khi có băn khoăn giữa lợi ích chung và lợi ích riêng, cách " +
-        "xử lý đúng đắn là công khai chứ không phải tự quyết âm thầm, dù động cơ ban đầu " +
-        "không xấu.",
+        "Trang 141-143: Liêm là trong sạch, không tham địa vị tiền tài, “chỉ có một thứ " +
+        "ham là ham học, ham làm, ham tiến bộ.” Trang 141-142 cảnh báo: “có quyền mà thiếu " +
+        "lương tâm là có dịp đục khoét, có dịp dĩ công vi tư.” Tình huống 6: tự ý dùng quỹ " +
+        "nhóm dù định trả lại vẫn là lẫn lộn công tư; không đụng quỹ mới giữ đúng tinh " +
+        "thần Liêm.",
     },
   ],
 };
