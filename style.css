@@ -3,6 +3,10 @@
   --color-duc-bg: #fdf1dc;
   --color-tai: #2563a8;
   --color-tai-bg: #e2edf8;
+  --color-correct: #2f7a4d;
+  --color-correct-bg: #e6f3ea;
+  --color-incorrect: #b3432f;
+  --color-incorrect-bg: #fbe9e5;
   --color-bg: #faf9f7;
   --color-card: #ffffff;
   --color-text: #232323;
@@ -32,7 +36,9 @@ body {
   padding: 24px 16px 84px;
 }
 
-.hidden { display: none; }
+/* !important vì đây là utility "ẩn tuyệt đối": phải thắng bất kể component nào
+   định nghĩa display riêng (đã dính lỗi thứ tự cascade với .modal-overlay). */
+.hidden { display: none !important; }
 
 @keyframes screen-in {
   from { opacity: 0; transform: translateY(8px); }
@@ -70,23 +76,11 @@ h3 { font-size: 1.1rem; font-weight: 600; margin: 4px 0 10px; }
 
 .block { margin-bottom: 22px; }
 .block-label {
-  position: relative;
-  padding-left: 15px;
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--color-text-muted);
   margin: 0 0 8px;
-}
-.block-label::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 9px;
-  height: 2px;
-  background: linear-gradient(90deg, var(--color-duc), var(--color-tai));
 }
 
 /* ---------- Screen 0 ---------- */
@@ -110,6 +104,29 @@ h3 { font-size: 1.1rem; font-weight: 600; margin: 4px 0 10px; }
 
 .intro-text { color: var(--color-text-muted); margin: 16px 0 24px; line-height: 1.65; }
 
+.theory-trigger-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 20px;
+}
+.theory-trigger-label { font-size: 0.82rem; color: var(--color-text-muted); }
+.theory-trigger {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 1.5px solid var(--color-border);
+  background: var(--color-card);
+  cursor: pointer;
+}
+.theory-trigger.duc { color: var(--color-duc); border-color: var(--color-duc); }
+.theory-trigger.duc:hover { background: var(--color-duc-bg); }
+.theory-trigger.tai { color: var(--color-tai); border-color: var(--color-tai); }
+.theory-trigger.tai:hover { background: var(--color-tai-bg); }
+
 /* ---------- Buttons ---------- */
 .btn-primary, .btn-secondary {
   display: inline-block;
@@ -132,7 +149,7 @@ h3 { font-size: 1.1rem; font-weight: 600; margin: 4px 0 10px; }
   margin-right: 10px;
 }
 
-/* ---------- Screen 1 — game loop ---------- */
+/* ---------- Screen 1, game loop ---------- */
 .progress-bar { margin-bottom: 22px; }
 .progress-meta {
   display: flex;
@@ -146,7 +163,46 @@ h3 { font-size: 1.1rem; font-weight: 600; margin: 4px 0 10px; }
   font-weight: 700;
   font-size: 0.95rem;
   color: var(--color-text);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
 }
+.layer-label:hover { color: var(--color-tai); }
+.layer-label::after {
+  content: "▾";
+  font-size: 0.65em;
+  color: var(--color-text-muted);
+  transition: transform .2s;
+}
+.layer-label[aria-expanded="true"]::after { transform: rotate(180deg); }
+
+.theory-point { margin-bottom: 16px; }
+.theory-point:last-child { margin-bottom: 0; }
+.theory-point-title {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin: 0 0 6px;
+  line-height: 1.4;
+}
+.theory-point-source {
+  font-family: var(--font);
+  font-weight: 400;
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+.theory-point-script {
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: var(--color-text);
+  margin: 0 0 12px;
+  white-space: pre-line;
+}
+
 #progress-label { font-size: 0.85rem; color: var(--color-text-muted); }
 .progress-track {
   height: 6px;
@@ -184,18 +240,21 @@ h3 { font-size: 1.1rem; font-weight: 600; margin: 4px 0 10px; }
 
 /* ---------- Quiz options (Screen 5) ---------- */
 .quiz-option.correct {
-  border-color: var(--color-duc);
-  background: var(--color-duc-bg);
+  border-color: var(--color-correct);
+  background: var(--color-correct-bg);
   opacity: 1;
   font-weight: 600;
 }
 .quiz-option.incorrect {
-  border-color: var(--color-border);
-  background: #f0eee9;
-  opacity: 0.7;
+  border-color: var(--color-incorrect);
+  background: var(--color-incorrect-bg);
+  opacity: 1;
 }
-.quiz-option.correct::after { content: " ✓"; }
-.quiz-option.incorrect::after { content: " ✗"; }
+.quiz-option.correct::after { content: " ✓"; color: var(--color-correct); font-weight: 700; }
+.quiz-option.incorrect::after { content: " ✗"; color: var(--color-incorrect); font-weight: 700; }
+
+#quiz-feedback-label.feedback-correct { color: var(--color-correct); }
+#quiz-feedback-label.feedback-incorrect { color: var(--color-incorrect); }
 
 @keyframes reveal-in {
   from { opacity: 0; transform: translateY(10px); }
@@ -219,7 +278,7 @@ h3 { font-size: 1.1rem; font-weight: 600; margin: 4px 0 10px; }
 
 .source-cite { font-size: 0.82rem; color: var(--color-text-muted); font-style: italic; }
 
-/* ---------- Screen 2 — result ---------- */
+/* ---------- Screen 2, result ---------- */
 .chart-wrap { display: flex; justify-content: center; margin-bottom: 18px; }
 #result-chart { width: 100%; max-width: 300px; height: auto; }
 
@@ -258,7 +317,7 @@ h3 { font-size: 1.1rem; font-weight: 600; margin: 4px 0 10px; }
 
 .result-actions { margin: 18px 0 14px; }
 
-/* ---------- Screen 3 — reference ---------- */
+/* ---------- Screen 3, reference ---------- */
 .citation-list { padding-left: 20px; margin: 0; font-size: 0.9rem; color: var(--color-text-muted); }
 .citation-list li { margin-bottom: 6px; }
 .citation-list .citation-layer-heading {
@@ -282,7 +341,55 @@ h3 { font-size: 1.1rem; font-weight: 600; margin: 4px 0 10px; }
   color: var(--color-text-muted);
 }
 
-/* ---------- Footer — cố định, luôn hiển thị, không phải popup ---------- */
+/* ---------- Modal "Những lý thuyết cần nắm vững" (A/B/C/D) ---------- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px 16px;
+  background: rgba(35, 35, 35, 0.45);
+  overflow-y: auto;
+}
+.modal-window {
+  width: 100%;
+  max-width: 560px;
+  max-height: 85vh;
+  overflow-y: auto;
+  background: var(--color-card);
+  border-radius: var(--radius);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  padding: 22px 22px 6px;
+}
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+.modal-header .block-label { margin: 0; }
+.modal-close {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: var(--color-card);
+  font-size: 1.1rem;
+  line-height: 1;
+  color: var(--color-text-muted);
+  cursor: pointer;
+}
+.modal-close:hover { background: #f0eee9; color: var(--color-text); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .modal-overlay:not(.hidden) { animation: reveal-in .2s ease both; }
+}
+
+/* ---------- Footer, cố định, luôn hiển thị, không phải popup ---------- */
 #site-footer {
   position: fixed;
   left: 0;
